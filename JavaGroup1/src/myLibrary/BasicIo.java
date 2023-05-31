@@ -27,4 +27,8 @@ public class BasicIo {
 		return (Integer.parseInt(readString()));
 	}
 
+	public static char readCharacter() {
+		return (new Scanner(System.in).nextLine().charAt(0));
+	}
+
 }
