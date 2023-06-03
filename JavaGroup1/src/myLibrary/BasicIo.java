@@ -6,6 +6,10 @@ public class BasicIo {
 	public static void printMessage(String message) { // static use for single user
 		System.out.print(message);
 	}
+	public static void printMessage(int message) { // static use for single user
+		System.out.print(message);
+	}
+
 
 	public static void printMessage(String label, String message) { // static use for single user
 		System.out.print(label + " : " + message);

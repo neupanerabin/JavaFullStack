@@ -27,7 +27,7 @@ public class Looping {
 		int start = 10;  // start
 		while(start >=stop) {
 			System.out.println(":"+start);
-			start++;
+			start-- ;
 		}
 		
 	}
