@@ -1,94 +1,54 @@
-import java.util.Scanner;    // import Scanner library files
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import myLibrary.BasicIo;
 
 public class Rough {
-	static int roll_no;
-	static int mask[] = new int[3];
-	static String name;
-	static char section, results;
-	static float total, average;
-	
-	public void input() {
-		Scanner sc = new Scanner(System.in);  // create objects for scanner
-		
-		System.out.println("Enter your Roll no: ");
-		roll_no = sc.nextInt();  // talking input 
-		
-		System.out.println("Enter your Name : ");
-		name = sc.next();  // talking input from user
-		
-		System.out.println("Enter your section no: ");
-		section = sc.next().charAt(0);  // talking input from user
-	
-	}
-	
-	public void masks() {
-		int i;
-		Scanner sc = new Scanner(System.in);  // create object for scanner
-		System.out.println("Enter mask for three subjects:");
-		for(i=0 ; i<3; i++) {
-			mask[i] = sc.nextInt();
-			}
-		//System.out.println(mask[i]);
 
-		
-	}
-	
-	public void display() {
-		//display output
-		int i;
-		float mask[]=new float[3];
-		float sum=0;
-		System.out.println();
-		System.out.println("Roll no: " + roll_no);
-        System.out.println("Name: " + name);
-        System.out.println("Section: " + section);
-        for(i=0 ; i<3; i++) {
-        	System.out.println(mask[i]);
-        	sum = sum + mask[i];
-			}
-        
-        
-		
+    public static void main(String[] args) {
+        final int MAX = 100;
+        int[] nums = new int[MAX];
 
-		
-	
-        System.out.println("Total mask :"+sum);
-        System.out.println("Average :"+average);
-        System.out.print("Result: ");
-        if(average > 40)  // check condition whether average is greater or not 
-			System.out.println("PASS");
-		else
-			System.out.println("FAIL");
-		
-		
-	}
-	
-	
-	public static void main(String[] args) {
-		try {
-			// Declarations of the variables 
-			Rough r = new Rough();
-			//r.input();
-			r.masks();
-			r.display();
-			
-			//total = subject1 + subject2 + subject3; 	// add marks of three subjects
-			average= total/3;		// calculation of average masks
+        try {
+            List<List<String>> data = new ArrayList<>(); // List of lists to store data
+            String file = "numbers.csv"; // File path
+            FileReader fr = new FileReader(file); // Read file
+            BufferedReader br = new BufferedReader(fr);
 
-			// display output
-			
-			
-		}
-		catch(Exception ex){
-			System.out.println();
-			
-			
-		}
+            // Reading until we run out of lines
+            String line = br.readLine();
+            while (line != null) {
+                List<String> lineData = Arrays.asList(line.split(",")); // Splitting lines
+                data.add(lineData);
+                line = br.readLine();
+            }
 
-		
-	}
-	
-	
-	
+            // Printing the fetched data
+            for (List<String> list : data) {
+                for (String str : list)
+                    BasicIo.printMessage(str + " ");
+                BasicIo.newLine();
+            }
+
+            // Calculating the sum of the numbers
+            int sum = 0;
+            for (List<String> list : data) {
+                for (String str : list) {
+                    int num = Integer.parseInt(str.trim()); // Convert each string to an integer
+                    sum += num; // Add the number to the sum
+                }
+            }
+            BasicIo.printMessage("Sum: " + sum);
+
+            br.close();
+        } catch (Exception e) {
+            BasicIo.printMessage(e);
+        } finally {
+            BasicIo.printMessage(" ");
+        }
+    }
 
 }

@@ -1,10 +1,16 @@
 package myLibrary;
 
+import java.io.BufferedReader;
+import java.util.List;
 import java.util.Scanner;
 
 public class BasicIo {
 	public static void printMessage(String message) { // static use for single user
 		System.out.print(message);
+	}
+	public static void printMessage(BufferedReader br) {
+		System.out.print(br);
+		
 	}
 	public static void printMessage(int message) { // static use for single user
 		System.out.print(message);
@@ -33,6 +39,19 @@ public class BasicIo {
 
 	public static char readCharacter() {
 		return (new Scanner(System.in).nextLine().charAt(0));
+	}
+	
+	public static void printMessage(Exception e) { // display for exception
+		System.out.print(e);
+	}
+	public static void printMessage(List<String> list) { // display list
+		System.out.print(list);
+	}
+	public static double nextDouble() {
+		return 0;
+	}
+	public static String next() {
+		return null;
 	}
 
 }
