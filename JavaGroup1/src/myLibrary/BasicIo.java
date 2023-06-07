@@ -33,7 +33,7 @@ public class BasicIo {
 		return (new Scanner(System.in).nextLine());
 	}
 
-	public static int readInt() {
+	public static int readInt() {	// for read integer 
 		return (Integer.parseInt(readString()));
 	}
 
@@ -52,6 +52,9 @@ public class BasicIo {
 	}
 	public static String next() {
 		return null;
+	}
+	public static void printMessage(boolean before) { // for display the boolean value
+		System.out.print(before);
 	}
 
 }

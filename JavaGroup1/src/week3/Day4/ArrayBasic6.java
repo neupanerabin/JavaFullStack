@@ -43,17 +43,24 @@ public class ArrayBasic6 {
 						BasicIo.printMessage(str + " ");
 					BasicIo.newLine();
 				}
-				  int sum = 0;
+				// sum start 
+				  int sum = 0,count=0;
 		            for (List<String> list : data) {
 		                for (String str : list) {
 		                    int num = Integer.parseInt(str.trim()); // Convert each string to an integer
 		                    sum += num; // Add the number to the sum
+		                    count++;
 		                }
 		            }
+		            
 		            BasicIo.printMessage("Sum: " + sum);
+		            BasicIo.newLine();
+		            float average = sum / count;
+		            System.out.println("Average = "+average);
 
 				
 				br.close();
+				
 			} catch (Exception e) {
 				BasicIo.printMessage(e);
 	
