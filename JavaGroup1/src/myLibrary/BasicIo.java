@@ -1,6 +1,7 @@
 package myLibrary;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ public class BasicIo {
 	public static void printMessage(String message) { // static use for single user
 		System.out.print(message);
 	}
+	
 	public static void printMessage(BufferedReader br) {
 		System.out.print(br);
 		
@@ -55,6 +57,14 @@ public class BasicIo {
 	}
 	public static void printMessage(boolean before) { // for display the boolean value
 		System.out.print(before);
+	}
+	
+	public static void printMessage(File file) { // Display the file
+		System.out.print(file);
+	}
+	
+	public static void printMessage(long l) { // Display for long
+		System.out.print(l);
 	}
 
 }

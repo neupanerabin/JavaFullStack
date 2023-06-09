@@ -1,54 +1,52 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+//import java.io.File;
+//import java.io.IOException;
+//import java.nio.file.Files;
+//import java.nio.file.Path;
+//import java.nio.file.StandardCopyOption;
+//
+//public class Rough {
+//
+//    public static void main(String[] args) {
+//        try {
+//            File sourceFolder = new File("/Users/rabin/eclipse-workspace/sourceFolder");  // Source folder
+//            File destinationFolder = new File("/Users/rabin/eclipse-workspace/destinationfolder");  // Destination folder
+//
+//            // Get files in the source folder
+//            File[] files = sourceFolder.listFiles();
+//
+//            if (files != null) {
+//                // Iterate over files and copy them to the destination folder
+//                for (File file : files) {
+//                    File destinationFile = new File(destinationFolder, file.getName());
+//                    Files.copy(file.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+//                    System.out.println("Copied file: " + file.getName());
+//                }
+//
+//                System.out.println("Files copied successfully");
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//}
 
-import myLibrary.BasicIo;
+
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Rough {
-
     public static void main(String[] args) {
-        final int MAX = 100;
-        int[] nums = new int[MAX];
-
         try {
-            List<List<String>> data = new ArrayList<>(); // List of lists to store data
-            String file = "numbers.csv"; // File path
-            FileReader fr = new FileReader(file); // Read file
-            BufferedReader br = new BufferedReader(fr);
-
-            // Reading until we run out of lines
-            String line = br.readLine();
-            while (line != null) {
-                List<String> lineData = Arrays.asList(line.split(",")); // Splitting lines
-                data.add(lineData);
-                line = br.readLine();
+            FileReader fread = new FileReader("/Users/rabin/eclipse-workspace/output.txt"); // Replace with the actual file path
+            
+            int character;
+            while ((character = fread.read()) != -1) {
+                System.out.print((char) character);
             }
-
-            // Printing the fetched data
-            for (List<String> list : data) {
-                for (String str : list)
-                    BasicIo.printMessage(str + " ");
-                BasicIo.newLine();
-            }
-
-            // Calculating the sum of the numbers
-            int sum = 0;
-            for (List<String> list : data) {
-                for (String str : list) {
-                    int num = Integer.parseInt(str.trim()); // Convert each string to an integer
-                    sum += num; // Add the number to the sum
-                }
-            }
-            BasicIo.printMessage("Sum: " + sum);
-
-            br.close();
-        } catch (Exception e) {
-            BasicIo.printMessage(e);
-        } finally {
-            BasicIo.printMessage(" ");
+            
+            fread.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-
 }
