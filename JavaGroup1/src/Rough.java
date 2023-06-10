@@ -31,22 +31,36 @@
 //}
 
 
-import java.io.FileReader;
+  import myLibrary.BasicIo;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class Rough {
-    public static void main(String[] args) {
-        try {
-            FileReader fread = new FileReader("/Users/rabin/eclipse-workspace/output.txt"); // Replace with the actual file path
-            
-            int character;
-            while ((character = fread.read()) != -1) {
-                System.out.print((char) character);
+
+    public static void main(String[] args) throws IOException {
+        File sourceFolder = new File("/Users/rabin/eclipse-workspace/sourceFolder");
+        File destinationFolder = new File("/Users/rabin/eclipse-workspace/destinationfolder");
+
+        if (!destinationFolder.exists()) {
+            destinationFolder.mkdirs(); // Create the destination folder if it doesn't exist
+        }
+
+        File[] files = sourceFolder.listFiles(); // Get all files from the source folder
+
+        if (files != null) {
+            for (File file : files) {
+                File destinationFile = new File(destinationFolder, file.getName());
+             
+                    Files.copy(file.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    BasicIo.newLine();
+                    BasicIo.printMessage("Copied file: " + file.getName());
+                
             }
-            
-            fread.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            BasicIo.printMessage("Source folder copied to the destination folder.");
+        } else {
+            BasicIo.printMessage("Source folder is empty or does not exist.");
         }
     }
 }

@@ -1,4 +1,5 @@
 package exceptionTest;
+
 import myLibrary.BasicIo;
 import java.io.File;
 import java.io.IOException;
@@ -13,14 +14,13 @@ public class fileClassTest {
 		// pathname --> absolute pathname
 		// pathname --> relative pathname
 		
-//		try {
-//			boolean result;
-//			File file;
-//			file = new File("/Users/rabin/eclipse-workspace"); // Absolute path
-//			File f1 = new File("/Users/rabin/eclipse-workspace/newfile.txt");
-//
-//
-//			System.out.println("____");
+		try {
+			boolean result;
+			File file = new File("/Users/rabin/eclipse-workspace"); // Absolute path
+			File f1 = new File("/Users/rabin/eclipse-workspace/newfile.txt");
+
+
+			System.out.println("____");
 
 			/*
 			 * // boolean canExecute() result = file.canExecute(); if(result) {
@@ -44,7 +44,7 @@ public class fileClassTest {
 			 }
 			
 			
-			/*
+			
 			
 			// 	compareTo(File pathname)
 			File f = new File("/Users/rabin/eclipse-workspace/newfile.txt");
@@ -211,38 +211,66 @@ public class fileClassTest {
             
             */
             
-			/*
+	/*		
             // Copy file
 			File source = new File("/Users/rabin/eclipse-workspace/Assignment1.txt");	// source file 
 			File copyfile = new File("/Users/rabin/eclipse-workspace/CopyFile.txt");	// Destination file 
 
             Files.copy(source.toPath(), copyfile.toPath());	// copy from source to destination
-            System.out.println("File copied successfully");	// Display
-            
-            */
-		try {
-			File file= new File("/Users/rabin/eclipse-workspace"); // Absolute path
+            System.out.println("File copied successfully");	// Display        
+		
+*/		
+		/*	// Another method to copy files
+	        File sourceFolder = new File("/Users/rabin/eclipse-workspace/sourceFolder");		// source location
+	        File destinationFolder = new File("/Users/rabin/eclipse-workspace/destinationfolders");	// destination location
 
-			File files[] = new File("/Users/rabin/eclipse-workspace/sourcefolder").listFiles();	// source file 
-            File sourceFolder = new File("/Users/rabin/eclipse-workspace/sourceFolder");  // Source folder
+	        if (!destinationFolder.exists()) {	// check if folder exist or not
+	            destinationFolder.mkdirs(); // Create the destination folder if it doesn't exist
+	        }
+	        File[] files = sourceFolder.listFiles(); // Get all files from the source folder
 
-			File destinationFolder = new File("/Users/rabin/eclipse-workspace/destinationfolder");  // Destination folder
-
-			BasicIo.printMessage(files.length);
-			for(File filee:files) {
-				BasicIo.printMessage(filee.getName());
-				BasicIo.newLine();
-				Files.copy(sourceFolder+"/"+file.getName(),destinationFolder+"/"+file.getName(),StandardCopyOption.REPLACE_EXISTING);
+	        if (files != null) {	// check if the files is null or not
+	            for (File flee : files) {
+	                File destinationFile = new File(destinationFolder, flee.getName());	// get the name of folder
+	                	// copy files from source to destination and remove existing
+	                    Files.copy(flee.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);																		
+	                    BasicIo.newLine();
+	                    BasicIo.printMessage("Copied file: " + flee.getName());	// Display the copied files name
+	            }
+	            BasicIo.printMessage("Source folder copied to the destination folder.");	// display the message
+	        } else {
+	            BasicIo.printMessage("Source folder is empty or does not exist.");	// Display the message
+	        }
+	    
+*/
+	/*
+			//int	hashCode()
+			int b;
+			if(file !=null) {
+				 b = file.hashCode();	// execute to the file
+				BasicIo.printMessage("Hash code : "+b);	// Display value and code
 			}
-
-            
+*/			
+		/*	
+			// boolean	isAbsolute()
+			if(file!=null) {
+				BasicIo.printMessage(file.isAbsolute());	// if absolute then true will display
+			}
+			*/
 			
-		} catch (Exception e) {	
-			e.printStackTrace();
+			// boolean isFile()
+	//		BasicIo.printMessage(f1.isFile());
+			// boolean isHidden()
+	//	BasicIo.printMessage(file.isHidden());	// true if file is hidden false otherwise
+			
+			//long	lastModified()
+			BasicIo.printMessage(file.lastModified());
+	
+		}catch (Exception e) {	
+			BasicIo.printMessage(e.getMessage());
+		
 		}
-		finally {
-			BasicIo.printMessage(" .");
-		}
+		
 		
 	}
 }
