@@ -2,9 +2,15 @@ package exceptionTest;
 
 import myLibrary.BasicIo;
 import java.io.File;
+import java.io.FilenameFilter;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
+import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class fileClassTest {
 
@@ -262,9 +268,53 @@ public class fileClassTest {
 	//		BasicIo.printMessage(f1.isFile());
 			// boolean isHidden()
 	//	BasicIo.printMessage(file.isHidden());	// true if file is hidden false otherwise
-			
+	
+	/*
 			//long	lastModified()
-			BasicIo.printMessage(file.lastModified());
+			long lastModified = file.lastModified();	// File into lastModified
+			Date lastModifiedDate = new Date(lastModified);	// changed into date
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	// Display format of date and time
+			String formattedDate = dateFormat.format(lastModifiedDate);		// insert modified date and time into display format
+			BasicIo.printMessage("Last Modified Date :"+ formattedDate);	// Display the date and time
+	*/		
+			//long	length()
+		//	BasicIo.printMessage(file.length());	// display the length of the file
+
+
+			
+			// String[]	list()
+			
+
+/*	       
+ // String[]	list(FilenameFilter filter)	
+			FilenameFilter filter = (dir, name) -> name.endsWith(".txt");	// Filter file  take .txt file in scanned
+
+			String[] filteredList = file.list(filter);	// take .txt file to dsiplay 
+			for(String files: filteredList) {	// Display .txt files
+				BasicIo.printMessage(files);	// Display
+				BasicIo.newLine();
+			}
+*/			
+		
+	/*		//File[]	listFiles()
+			File[] filelist = file.listFiles();		// scan all the file in the given directory
+			for(File listfile:filelist) {			// loop used to display all the files
+				BasicIo.printMessage(listfile);
+				BasicIo.newLine();
+			}
+	*/		
+			// File[]	listFiles(FileFilter filter)
+			FileFilter filter = (dir, name) -> name.endsWith("");	// scan all available files and folders
+
+			String[] listFiles = file.list(filter);	// take file to display 
+			for(String files: listFiles) {	// Display all available files
+				BasicIo.printMessage(files);	// Display
+				BasicIo.newLine();
+			}
+			
+			
+			
 	
 		}catch (Exception e) {	
 			BasicIo.printMessage(e.getMessage());
