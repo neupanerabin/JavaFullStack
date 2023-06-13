@@ -2,6 +2,8 @@ package myLibrary;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.net.URI;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
 
@@ -65,6 +67,12 @@ public class BasicIo {
 	
 	public static void printMessage(long l) { // Display for long
 		System.out.print(l);
+	}
+	public static void printMessage(Path paths) { // for display of paths
+		System.out.print(paths);
+	}
+	public static void printMessage(URI uri) {
+		System.out.println(uri);
 	}
 
 }

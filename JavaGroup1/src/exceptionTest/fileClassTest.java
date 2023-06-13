@@ -5,9 +5,13 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,8 +26,8 @@ public class fileClassTest {
 		
 		try {
 			boolean result;
-			File file = new File("/Users/rabin/eclipse-workspace"); // Absolute path
-			File f1 = new File("/Users/rabin/eclipse-workspace/newfile.txt");
+			File file = new File("/Users/rabin/eclipse-workspace/hello"); // Absolute path
+			File f1 = new File("/Users/rabin/eclipse-workspace/newfiles.txt");
 
 
 			System.out.println("____");
@@ -49,9 +53,7 @@ public class fileClassTest {
 			 else { System.out.println("cannot execute "); 
 			 }
 			
-			
-			
-			
+				
 			// 	compareTo(File pathname)
 			File f = new File("/Users/rabin/eclipse-workspace/newfile.txt");
 			int compare = file.compareTo(file);
@@ -304,18 +306,207 @@ public class fileClassTest {
 				BasicIo.newLine();
 			}
 	*/		
+	/*		
 			// File[]	listFiles(FileFilter filter)
-			FileFilter filter = (dir, name) -> name.endsWith("");	// scan all available files and folders
+			FilenameFilter filter = (dir, name) -> name.endsWith("");	// scan all available files and folders
 
 			String[] listFiles = file.list(filter);	// take file to display 
 			for(String files: listFiles) {	// Display all available files
 				BasicIo.printMessage(files);	// Display
 				BasicIo.newLine();
 			}
-			
-			
-			
+	*/
+			// static File[]	listRoots()
+	/*		
+			File[] rootfile = f1.listRoots();		 // detect all the files
+			for(File rootlist:rootfile) {		// loop used
+				BasicIo.printMessage(rootlist);	// Display
+				BasicIo.newLine();
+				
+			}
+	*/		
+			// boolean	mkdir()
+	/*		if(!file.exists()) {	// if file doesn't exists then create file
+				boolean results = file.mkdir();		// boolean with make directory
+				if(results) {	// check if file exists or not
+					BasicIo.printMessage("Successfully created "+file.getAbsolutePath());
+				}
+				else {
+					BasicIo.printMessage("Failed creating "+file.getAbsolutePath());
+				}
+			}
+			else {
+				BasicIo.printMessage("pathname already exists");
+			}
+	*/
+			/*
+			// boolean mkdirs()
+			if(!file.exists()) {	// if file doesn't exist hen only create files
+				boolean results = file.mkdirs();		// boolean with make directory
+				if(results) {	// check if file exists or not
+					BasicIo.printMessage("Successfully created "+file.getAbsolutePath());
+				}
+				else {
+					BasicIo.printMessage("Failed creating "+file.getAbsolutePath());
+				}
+			}
+			else {
+				BasicIo.printMessage("pathname already exists");
+			}
+	*/
+		/*
+			// boolean	renameTo(File dest)	
+			File dest_file = new File("/Users/rabin/eclipse-workspace/hello");	// dest file name to rename given file
+			if(file.exists()) {	// if file exist then only rename files
+				boolean results = file.renameTo(dest_file);		// boolean with make directory
+				if(results) {	// check if file exists or not
+					BasicIo.printMessage("Successfully created ");
+				}
+				else {
+					BasicIo.printMessage("Failed creating ");
+				}
+			}
+			else {
+				BasicIo.printMessage("Failed to rename files");
+			}
+	*/
+	/*
+			// boolean	setExecutable(boolean executable)
+			if(file.exists()) {	// check file exists or not
+				boolean results = file.setExecutable(true);		// set boolean value
+				if(results) {
+					BasicIo.printMessage("Operation successfull: "+results);	// Display output
+				}
+				else {
+					BasicIo.printMessage(results+":Operation failed");	// Display output
+				}
+			}else {
+					BasicIo.printMessage("File doesn't exist");	// Display output
+				}
+	*/		
+	/*
+			// boolean	setExecutable(boolean executable, boolean ownerOnly)
+			if(file.exists()) {
+				// set file as executable considering if the user is the owner or not
+				boolean results = file.setExecutable(true, false);
+				// evaluate the result
+				if(results){
+					System.out.println("Operation succeeded: "+results);
+				}
+				else{
+					System.out.println("Operation failed"+results);
+				}
+			}else{
+				System.out.println("File does not exist"+file);
+			}
+	*/
+	/*		// boolean	setLastModified(long time)
+			if(file.exists()){
+				Calendar cal = Calendar.getInstance();	// import and declare objects of calendar
+				long modDate = cal.getTimeInMillis();	// Take date and time
+				boolean results = file.setLastModified(modDate);	
+				Date lastModifiedDate = new Date(modDate);	// changed into date
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	// Display format of date and time
+				String formattedDates = dateFormat.format(lastModifiedDate);
+				
+				// check if the rename operation is success
+				if(results){
+					System.out.println("Operation Success: "+formattedDates);	// Display the output
+				}else{
+					System.out.println("Operation failed: "+formattedDates);	// Display the output
+				}
+				
+			}else{
+				System.out.println("File does not exist");
+			}
+	*/	
+		/*
+			//	boolean	setReadable(boolean readable)
+			if(file.exists()) {
+				// set file as executable considering if the user is the owner or not
+				boolean results = file.setReadable(true);
+				// evaluate the result
+				if(results){
+					System.out.println(" allow to read operation: "+results);
+				}
+				else{
+					System.out.println("disallow to read operation "+results);
+				}
+			}else{
+					BasicIo.printMessage("File doesn't exist" );
+			}	
+	*/
+	/*		// boolean	setReadable(boolean readable, boolean ownerOnly)
+			if(file.exists()) {		// check if file exists or not
+				boolean results = file.setReadable(true, false);
+				if(results) {	// evaluate the results
+					BasicIo.printMessage("files are readable :");
+				}
+				else {
+					BasicIo.printMessage("files are not readable");
+				}
+			}else {
+					BasicIo.printMessage("File doesn't exist" );
+				}
+	*/		
+	/*		
+			// boolean	setReadOnly()
+			if(file.exists()) {
+				boolean results = file.setReadOnly();
+				if(results) {
+					BasicIo.printMessage("Files are readable");
+				}
+				else {
+					BasicIo.printMessage("File doesn't exist" );
+				}
+			}
+		*/
+		/*
+			// boolean	setWritable(boolean writable)
+			if(file.exists()) {		// check if file exists or not
+				boolean results = file.setWritable(true);
+				if(results) {	// evaluate the results
+					BasicIo.printMessage("files are writeable :");
+				}
+				else {
+					BasicIo.printMessage("files are not writeable");
+				}
+			}else {
+					BasicIo.printMessage("File doesn't exist" );
+				}
+	*/		
+	/*		
+		//	 boolean	setWritable(boolean writable, boolean ownerOnly)
+			if(file.exists()) {		// check if file exists or not
+				boolean results = file.setReadable(true, false);
+				if(results) {	// evaluate the results
+					BasicIo.printMessage("files are writeable :");
+				}
+				else {
+					BasicIo.printMessage("files are not eriteable");
+				}
+			}else {
+					BasicIo.printMessage("File doesn't exist" );
+				}
+		*/
+//		// Path	toPath()
+//			if(file.exists()) {
+//				Path paths = file.toPath();	// display the path of the files
+//				BasicIo.printMessage("Paths:"+paths);
+//			}
+//			
+		// String	toString()
+			String str =file.toString();	// Returns the pathname string of this abstract pathname 
+			BasicIo.printMessage("String : "+str);	// Display output
 	
+			//URI	toURI()		
+			URI uri = file.toURI();	// represents this abstract path name
+			BasicIo.printMessage(" URI : "+uri);	// Display output
+			BasicIo.newLine();
+			// URL   toURL
+			URL url = file.toURL();		// represent the path 
+			BasicIo.printMessage("URL" +url);
+			
 		}catch (Exception e) {	
 			BasicIo.printMessage(e.getMessage());
 		

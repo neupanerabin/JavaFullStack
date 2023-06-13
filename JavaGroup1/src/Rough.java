@@ -31,36 +31,35 @@
 //}
 
 
-  import myLibrary.BasicIo;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
+import javax.swing.*;
 
 public class Rough {
+    public static void main(String[] args) {
+        // Create a JFrame
+        JFrame frame = new JFrame("Complaint Box");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
 
-    public static void main(String[] args) throws IOException {
-        File sourceFolder = new File("/Users/rabin/eclipse-workspace/sourceFolder");
-        File destinationFolder = new File("/Users/rabin/eclipse-workspace/destinationfolder");
+        // Create a text area to enter the complaint
+        JTextArea complaintTextArea = new JTextArea();
+        complaintTextArea.setLineWrap(true);
 
-        if (!destinationFolder.exists()) {
-            destinationFolder.mkdirs(); // Create the destination folder if it doesn't exist
-        }
+        // Create a submit button
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener(e -> {
+            String complaint = complaintTextArea.getText();
+            JOptionPane.showMessageDialog(frame, "Complaint submitted:\n" + complaint);
+            complaintTextArea.setText(""); // Clear the text area
+        });
 
-        File[] files = sourceFolder.listFiles(); // Get all files from the source folder
+        // Add components to the frame
+        frame.getContentPane().add(new JScrollPane(complaintTextArea));
+        frame.getContentPane().add(submitButton, "South");
 
-        if (files != null) {
-            for (File file : files) {
-                File destinationFile = new File(destinationFolder, file.getName());
-             
-                    Files.copy(file.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                    BasicIo.newLine();
-                    BasicIo.printMessage("Copied file: " + file.getName());
-                
-            }
-            BasicIo.printMessage("Source folder copied to the destination folder.");
-        } else {
-            BasicIo.printMessage("Source folder is empty or does not exist.");
-        }
+        // Set layout manager
+        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+
+        // Display the frame
+        frame.setVisible(true);
     }
 }

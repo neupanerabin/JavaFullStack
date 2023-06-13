@@ -2,6 +2,7 @@ package jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class jdbc1 {
 	public static void main(String[] args) {
@@ -21,6 +22,10 @@ public class jdbc1 {
 			Connection conn = DriverManager.getConnection(URL, DBUSER, DBPASS);
 			conn.close();
 			System.out.println("Connect with database successfully");
+		}
+		catch(SQLException ex){
+			System.out.println(ex);
+			
 		}
 		
 		catch(Exception ex) {

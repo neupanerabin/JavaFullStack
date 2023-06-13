@@ -22,7 +22,6 @@ public class CharacterReadWrite {
 
 		try {
 			String str = "File Handling in Java using " + " FileWriter and FileReader";
-
 			// attach a file to FileWriter
 			FileWriter fw = new FileWriter("/Users/rabin/eclipse-workspace/output.txt");
 
