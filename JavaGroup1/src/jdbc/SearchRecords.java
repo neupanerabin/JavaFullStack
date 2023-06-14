@@ -5,9 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.swing.JOptionPane;
-
-public class InsertRecords {
+public class SearchRecords {
 	public static void main(String[] args) {
 		//connection
 		final String DRIVER = "com.mysql.cj.jdbc.Driver";	// Driver link provided
@@ -19,24 +17,37 @@ public class InsertRecords {
 		final String DBPASS="6p9k3h3bWq";		//Database password
 		final int PORT = 3306;
 		final String URL="jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME; // merge all and create url
-		
+		int count = 0;
 		try {
 			// connection
-			Class.forName(DRIVER);
+			Class.forName(DRIVER);	// Loading Driver
 			Connection conn = DriverManager.getConnection(URL, DBUSER, DBPASS);		// request for connection
+			
 			// Insert Records
-			String sql="INSERT INTO tbl_person VALUES(110, 'Rabin Neupane', 'ktm')";
 			Statement state = conn.createStatement();	
-			state.executeUpdate(sql);
-			conn.close();	// Connection close
-			System.out.println("Connect with database successfully");
+
+			String sql="SELECT * FROM tbl_person where pid=11";
+			ResultSet rs = state.executeQuery(sql);	// Get all records from table
+			
+			System.out.println("PID\t\t Name\t\t\tAddress");	// Display output
+			while(rs.next()) {
+				System.out.println(rs.getInt("pid")+"\t \t"+ rs.getString("name")+"\t\t"+ rs.getString("address"));
+				count++;
+			}
+			rs.close();
+			state.close();
+			conn.close();
+			
+			System.out.print("Search records successfully");
+			System.out.print("\nTotal Records: "+count);
 			
 		}
 		
 		catch(Exception ex) {
 			System.out.println("Error : "+ex.getMessage());
 		}
-		
 	}
+		
+	
 
 }

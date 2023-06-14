@@ -5,9 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.swing.JOptionPane;
-
-public class InsertRecords {
+public class DisplayRecords {
 	public static void main(String[] args) {
 		//connection
 		final String DRIVER = "com.mysql.cj.jdbc.Driver";	// Driver link provided
@@ -22,21 +20,32 @@ public class InsertRecords {
 		
 		try {
 			// connection
-			Class.forName(DRIVER);
+			Class.forName(DRIVER);	// Loading Driver
 			Connection conn = DriverManager.getConnection(URL, DBUSER, DBPASS);		// request for connection
+			
 			// Insert Records
-			String sql="INSERT INTO tbl_person VALUES(110, 'Rabin Neupane', 'ktm')";
 			Statement state = conn.createStatement();	
-			state.executeUpdate(sql);
-			conn.close();	// Connection close
-			System.out.println("Connect with database successfully");
+
+			String sql="SELECT * FROM tbl_person";
+			ResultSet rs = state.executeQuery(sql);	// Get all records from table
+			System.out.println("PID\t\t Name\t\tAddress");
+			
+			while(rs.next()) {
+				System.out.println(rs.getInt("pid")+"\t \t"+ rs.getString("name")+"\t\t"+ rs.getString("address"));
+			}
+			rs.close();
+			state.close();
+			conn.close();
+			
+			System.out.print("Display all records successfully");
 			
 		}
 		
 		catch(Exception ex) {
 			System.out.println("Error : "+ex.getMessage());
 		}
-		
 	}
+		
+	
 
 }
