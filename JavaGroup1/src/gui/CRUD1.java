@@ -13,8 +13,8 @@ import jdbcv3.CRUDV1;
 
 
 public class CRUD1 extends JFrame implements ActionListener{
-	JLabel lblPID, lblName, lblAddress;
-	JTextField txtPID, txtName, txtAddress;
+	JLabel lblPID, lblName, lblAddress;		// Label
+	JTextField txtPID, txtName, txtAddress;	// Create Field
 	JButton btnSave, btnClose;
 	
 	public CRUD1() {
@@ -23,33 +23,39 @@ public class CRUD1 extends JFrame implements ActionListener{
 		setResizable(false);
 		
 		lblPID = new JLabel("PID ");
-		lblPID.setBounds(20, 20, 70, 30);
-		txtPID = new JTextField("Enter id");
-		txtPID.setBounds(50, 30, 100, 30);
+		lblPID.setBounds(20, 20, 70, 30);		// JLabel area
+		txtPID = new JTextField("Enter id");	// 
+		txtPID.setBounds(50, 20, 100, 30);		// text field coordinates
 		
 		lblName = new JLabel("Name: ");
 		lblName.setBounds(20, 60, 70, 30);
+		txtName = new JTextField("Enter name");
+		txtName.setBounds(80,60, 130, 30);
 
 		lblAddress = new JLabel("Address: ");
 		lblAddress.setBounds(20, 100, 70, 30);
+		txtAddress = new JTextField("Enter address");
+		txtAddress.setBounds(90,100, 170, 30);
+
 		
-		
-		btnSave = new JButton("Save");
-		btnSave.setBounds(20, 140, 70, 30);
+		btnSave = new JButton("Save");	// Button create
+		btnSave.setBounds(20, 140, 70, 30);	// button place 
 		btnSave.addActionListener(this);
 		
-		btnClose = new JButton("Close");
-		btnClose.setBounds(90, 140, 70, 30);
+		btnClose = new JButton("Close");	// Close button create
+		btnClose.setBounds(90, 140, 70, 30);	// close button place
 		btnClose.addActionListener(this);
 		
 		setLayout(null);
-		add(lblPID);
-		add(lblName);
-		add(lblAddress);
+		add(lblPID);	// call for pid
+		add(lblName);	// call for name
+		add(lblAddress);	// call for address
 		
-		add(txtPID);
-		add(btnSave);
-		add(btnClose);
+		add(txtPID);	// text id area
+		add(txtName);	// text name area call
+		add(txtAddress);	//txt name address call
+		add(btnSave);	// save button call
+		add(btnClose);	// close button close
 		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,7 +82,7 @@ public class CRUD1 extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(btnClose, ae);
 			}
 			else {
-				JOptionPane.showMessageDialog(this, "Error to  rsaveecord ");
+				JOptionPane.showMessageDialog(this, "Error to  save record ");
 
 			}
 			}

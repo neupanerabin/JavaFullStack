@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import myLibrary.BasicIo;
 
 public class MySqlConnection {
-	Connection conn = null;
+	Connection conn;
 
 	public Connection connect() {
 		try {
