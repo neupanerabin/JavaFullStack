@@ -9,15 +9,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import global.Global;
 import jdbcv3.CRUDV1;
 
-public class CRUD1 extends JFrame implements ActionListener {
+public class CRUDv2_search extends JFrame implements ActionListener {
 	JLabel lblPID, lblName, lblAddress; // Label
 	JTextField txtPID, txtName, txtAddress; // Create Field
-	JButton btnSave, btnClose;
+	JButton btnSearch, btnClose;
 
-	public CRUD1() {
-		setTitle("CRUD-1");
+	public CRUDv2_search() {
+		setTitle("Button Search");
 		setSize(350, 350);
 		setResizable(false);
 		
@@ -38,10 +39,11 @@ public class CRUD1 extends JFrame implements ActionListener {
 		lblAddress.setBounds(20, 100, 70, 30);	// Label Position
 		txtAddress = new JTextField("Enter address");	// text field
 		txtAddress.setBounds(90, 100, 170, 30);			// text field frame
-
-		btnSave = new JButton("Save"); 		// Button create
-		btnSave.setBounds(20, 140, 70, 30); // button place
-		btnSave.addActionListener(this);
+		
+		// Search
+		btnSearch = new JButton("Search"); 		// Button searchcreate
+		btnSearch.setBounds(20, 140, 70, 30); // button place
+		btnSearch.addActionListener(this);
 
 		btnClose = new JButton("Close"); 		// Close button create
 		btnClose.setBounds(90, 140, 70, 30); 	// close button place
@@ -55,7 +57,7 @@ public class CRUD1 extends JFrame implements ActionListener {
 		add(txtPID); 	// text id area
 		add(txtName);   // text name area call
 		add(txtAddress); 	// txt name address call
-		add(btnSave); 	// save button call
+		add(btnSearch); 	// save button call
 		add(btnClose); 	// close button close
 		
 		setVisible(true);
@@ -69,20 +71,26 @@ public class CRUD1 extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 		// save Record
+		else if(ae.getSource()==btnSearch){
 		int pid = Integer.parseInt(txtPID.getText());	// get id
-		String name = txtName.getText();		// Get name
-		String address = txtAddress.getText();	// Get address
-		boolean result = new CRUDV1().insert(pid, name, address);	// boolean value for 
+		
+		boolean result = new CRUDV1().search(pid);	// boolean value for 
 		if (result) {
-			JOptionPane.showMessageDialog(this, "Save record suucessfully");
+			txtName.setText(Global.name);
+			txtAddress.setText(Global.address);
+			
+			JOptionPane.showMessageDialog(this, "Search record suucessfully");
 		} else {
-			JOptionPane.showMessageDialog(this, "Error to  save record ");
+			txtName.setText("");
+			txtAddress.setText("");
+			JOptionPane.showMessageDialog(this, "Error to  search record ");
 
+		}
 		}
 	}
 
 	public static void main(String[] args) {
-		new CRUD1();
+		new CRUDv2_search();
 
 	}
 
