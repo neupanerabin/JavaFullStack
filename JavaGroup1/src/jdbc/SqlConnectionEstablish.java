@@ -4,16 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class jdbc1 {
+public class SqlConnectionEstablish {
 	public static void main(String[] args) {
 		//connection
 		final String DRIVER = "com.mysql.cj.jdbc.Driver";	// Driver link provided
 		
 		// 
-		final String DBNAME = "sql12624803";	
-		final String HOST = "sql12.freemysqlhosting.net";
-		final String DBUSER = "sql12624803";
-		final String DBPASS="6p9k3h3bWq";
+		final String DBNAME = "sql12624803";		// Database table name
+		final String HOST = "localhost";	// hosting site
+		final String DBUSER = "root";	// database name
+		final String DBPASS="Neupane@11";	// password
 		final int PORT = 3306;
 		final String URL="jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME; 
 		try {

@@ -26,7 +26,7 @@ public class DeleteRecord {
 			// Insert Records
 			Statement state = conn.createStatement();	
 
-			String sql="DELETE FROM tbl_person WHERE pid=11";
+			String sql="DELETE FROM tbl_person WHERE pid=100";
 			 state.executeUpdate(sql);	// Get all records from table
 			state.close();
 			conn.close();

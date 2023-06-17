@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class CRUDOne1 {
+public class CRUDOneBy_functions {
 	
 	// insert file
 	public static void insert() {

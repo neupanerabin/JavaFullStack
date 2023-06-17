@@ -8,7 +8,7 @@ import myLibrary.BasicIo;
 
 import javax.swing.JOptionPane;
 
-public class CRUDOne {
+public class CRUDOneBy_Swich {
 	public static void main(String[] args) {
 		//connection
 		final String DRIVER = "com.mysql.cj.jdbc.Driver";	// Driver link provided

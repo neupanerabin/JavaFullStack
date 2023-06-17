@@ -31,35 +31,37 @@
 //}
 
 
-import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Rough {
-    public static void main(String[] args) {
-        // Create a JFrame
-        JFrame frame = new JFrame("Complaint Box");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+	
+	public static void main(String[] args) {
+		List<List<String>> records = new ArrayList<>();
+		try {
+			String csvfilepath = "/Users/rabin/Documents/Student.csv";
+			BufferedReader bufferead = new BufferedReader(new FileReader(csvfilepath));
+			String line;
+			while((line = bufferead.readLine()) != null) {
+				String[] values = line.split(line);
+		        records.add(Arrays.asList(values));
+			}
+			// Display data
+			for(List<String> list:records) {
+				for(String str:list) {
+					System.out.println(str);
+				}
+			}
+			
+		}
+		catch(Exception ex) {
+			System.out.printf("Eroor in files"+ex.getMessage());
+		}
+		
+		
+	}
 
-        // Create a text area to enter the complaint
-        JTextArea complaintTextArea = new JTextArea();
-        complaintTextArea.setLineWrap(true);
-
-        // Create a submit button
-        JButton submitButton = new JButton("Submit");
-        submitButton.addActionListener(e -> {
-            String complaint = complaintTextArea.getText();
-            JOptionPane.showMessageDialog(frame, "Complaint submitted:\n" + complaint);
-            complaintTextArea.setText(""); // Clear the text area
-        });
-
-        // Add components to the frame
-        frame.getContentPane().add(new JScrollPane(complaintTextArea));
-        frame.getContentPane().add(submitButton, "South");
-
-        // Set layout manager
-        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
-
-        // Display the frame
-        frame.setVisible(true);
-    }
 }
