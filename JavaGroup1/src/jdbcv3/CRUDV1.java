@@ -1,10 +1,13 @@
 package jdbcv3;
 
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -120,17 +123,19 @@ public class CRUDV1 extends MySqlConnection {
 	
 	// Didplay all data
 	public boolean selectAll() {
+		JButton btnExport;
+		boolean result=false;
 
 		try {
 		    Connection conn = connect();  // Connect with the database
-		    Statement stmt = conn.createStatement();
-		    String sql = "SELECT * FROM tbl_person";
-		    ResultSet rs = stmt.executeQuery(sql);
+		    Statement stmt = conn.createStatement();	// create statement
+		    String sql = "SELECT * FROM tbl_person";	// select data from database
+		    ResultSet rs = stmt.executeQuery(sql);		// Execute sql
 		    
 		    DefaultTableModel model = new DefaultTableModel(); // Instantiate the model here
-
-	        String[] columnNames = {"ID", "Name", "Address"};
-	        model.setColumnIdentifiers(columnNames);
+	        model.addColumn("PID");
+	        model.addColumn("Name");
+	        model.addColumn("Address");
 
 		    while (rs.next()) {
 		        int pid = rs.getInt("pid");
@@ -138,22 +143,86 @@ public class CRUDV1 extends MySqlConnection {
 		        String address = rs.getString("address");
 		        model.addRow(new Object[]{pid, name, address});
 		    }
+		    JTable table = new JTable(model);		// add model to table 
+		    JScrollPane scrollPane = new JScrollPane(table);	// add table to scrollPane
+		    scrollPane.setBounds(20, 20, 400, 400);
 		    
-		  //closeConnection();
+		    JFrame frame = new JFrame("Person data");
+		    
+		    frame.setSize(400, 500);	// size of frame
+		    frame.setLayout(null);
+		    frame.add(scrollPane);		// add scrollPane for table
+
+		    frame.setVisible(true);
+		    
+		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+
+		    closeConnection();
+		    
 		    rs.close();
 		    stmt.close();
-		    
-		   // table.setModel(model);
+		    result = true;
 		    
 		} catch (Exception ex) {
 		    BasicIo.printMessage("Error: " + ex);
 		}
 		
-		return false;
-
-
+		return result;
 
 	}
-	
+	public boolean Export() {
+		JButton btnExport;
+		boolean result=false;
+
+		try {
+		    Connection conn = connect();  // Connect with the database
+		    Statement stmt = conn.createStatement();	// create statement
+		    String sql = "SELECT * FROM tbl_person";	// select data from database
+		    ResultSet rs = stmt.executeQuery(sql);		// Execute sql
+		    
+		    DefaultTableModel model = new DefaultTableModel(); // Instantiate the model here
+	        model.addColumn("PID");
+	        model.addColumn("Name");
+	        model.addColumn("Address");
+
+		    while (rs.next()) {
+		        int pid = rs.getInt("pid");
+		        String name = rs.getString("name");
+		        String address = rs.getString("address");
+		        model.addRow(new Object[]{pid, name, address});
+		    }
+		    JTable table = new JTable(model);		// add model to table 
+		    JScrollPane scrollPane = new JScrollPane(table);	// add table to scrollPane
+		    scrollPane.setBounds(20, 20, 200, 200);
+		    
+		    JFrame frame = new JFrame("Person data");
+		    
+		    
+		    btnExport = new JButton("EXPORT"); // BVutton export create
+		    btnExport.setBounds(100, 250, 70, 30); // Export  button position		    
+		    
+		    frame.setSize(400, 500);	// size of frame
+		    frame.setLayout(null);
+		    frame.add(btnExport);	// button add to frame
+		    frame.add(scrollPane);		// add scrollPane for table
+
+		    frame.setVisible(true);
+		    
+		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+
+		    closeConnection();
+		    
+		    rs.close();
+		    stmt.close();
+		    result = true;
+		    
+		    
+		} catch (Exception ex) {
+		    BasicIo.printMessage("Error: " + ex);
+		}
+		
+		return result;
+
+	}
 
 }

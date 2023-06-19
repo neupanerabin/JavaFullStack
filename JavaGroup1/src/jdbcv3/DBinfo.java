@@ -10,5 +10,6 @@ public class DBinfo {
 	final static String DBUSER = "root";	// Database username
 	final static String DBPASS = "Neupane@11";	// password
 	final static String URL = "jdbc:mysql://"+HOSTNAME+":" + PORT + "/" + DBNAME;
+	
 
 }
