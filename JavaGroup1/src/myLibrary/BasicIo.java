@@ -11,7 +11,6 @@ public class BasicIo {
 	public static void printMessage(String message) { // static use for single user
 		System.out.print(message);
 	}
-	
 	public static void printMessage(BufferedReader br) {
 		System.out.print(br);
 		
@@ -40,10 +39,15 @@ public class BasicIo {
 	public static int readInt() {	// for read integer 
 		return (Integer.parseInt(readString()));
 	}
+	
+	public static float readFloat() {
+		return (Float.parseFloat(readString()));
+	}
 
 	public static char readCharacter() {
 		return (new Scanner(System.in).nextLine().charAt(0));
 	}
+	
 	
 	public static void printMessage(Exception e) { // display for exception
 		System.out.print(e);
