@@ -8,12 +8,12 @@ public class Person {
 	
 	public Person() {	// Default constructor
 		this.pid=0;
-		this.name="";
+		this.name="name";
 		this.address= "address";
 	}
 	
 	public Person(int id, String name, String address) {	// Default constructor
-		this.pid=pid;
+		this.pid=id;
 		this.name=name;
 		this.address= address;
 	}

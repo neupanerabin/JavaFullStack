@@ -15,7 +15,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	@Override
 	public boolean insert(Person person) {
 		boolean result = false;
-		String sql = "INSERT INTO tbl_person VALUES(?, ?, ?)";
+		String sql = "INSERT INTO Student VALUES(?, ?, ?)";
 		try {
 			Connection conn = connect();
 			PreparedStatement psta = conn.prepareStatement(sql);
@@ -34,7 +34,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	
 	@Override
 	public Person search(int pid) {
-		String sql = "SELECT * tbl_person WHERE pid= ?";
+		String sql = "SELECT * Student WHERE pid= ?";
 		Person person = null;
 		try {
 			Connection conn = connect();
@@ -60,7 +60,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	public boolean update(Person person) {
 		
 		boolean result = false;
-		String sql = "UPDATE tbl_person  SET name=?, address= ? WHERE pis=?";
+		String sql = "UPDATE Student  SET name=?, address= ? WHERE pis=?";
 		try {
 			Connection conn = connect();
 			PreparedStatement psta = conn.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	@Override
 	public boolean delete(int pid) {
 		boolean result = false;
-		String sql = "DELETE FROM tbl_person WHERE pid =?";
+		String sql = "DELETE FROM Student WHERE pid =?";
 		Global.pid = 1;
 		try {
 			Connection conn = connect();	// connection start with database
@@ -102,7 +102,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	@Override
 	public Vector persons() {
 		Vector allPersons=new Vector();
-		String sql = "SELECT * FROM tbl_person";
+		String sql = "SELECT * FROM Student";
 		try {
 			Connection conn = connect();
 			PreparedStatement pstat=conn.prepareStatement(sql);

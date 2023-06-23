@@ -8,5 +8,4 @@ public interface CRUD {
 	public boolean update(Person person);	// update record based on pid
 	public boolean delete(int pid);	// delete record based on pid
 	public Vector persons(); 	// get all
-
 }

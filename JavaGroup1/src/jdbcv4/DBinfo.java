@@ -4,7 +4,7 @@ public class DBinfo {
 	static int count = 0;
 	final static String DRIVER = "com.mysql.cj.jdbc.Driver";
 	public static final String HOSTNAME = "localhost";	// Host Name
-	final static String DBNAME = "sql12624803";	// Database name
+	final static String DBNAME = "Javafullstack";	// Database name
 	
 	final static int PORT = 3306;	// port
 	final static String DBUSER = "root";	// Database username
