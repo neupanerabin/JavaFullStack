@@ -39,6 +39,9 @@ public class BasicIo {
 	public static int readInt() {	// for read integer 
 		return (Integer.parseInt(readString()));
 	}
+	public static int readInt(String string) {	// for read integer 
+		return (Integer.parseInt(readString()));
+	}
 	
 	public static float readFloat() {
 		return (Float.parseFloat(readString()));

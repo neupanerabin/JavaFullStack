@@ -34,7 +34,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	
 	@Override
 	public Person search(int pid) {
-		String sql = "SELECT * Student WHERE pid= ?";
+		String sql = "SELECT * FROM Student WHERE pid=?";
 		Person person = null;
 		try {
 			Connection conn = connect();
@@ -82,7 +82,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	@Override
 	public boolean delete(int pid) {
 		boolean result = false;
-		String sql = "DELETE FROM Student WHERE pid =?";
+		String sql = "DELETE * FROM Student WHERE pid =?";
 		Global.pid = 1;
 		try {
 			Connection conn = connect();	// connection start with database
