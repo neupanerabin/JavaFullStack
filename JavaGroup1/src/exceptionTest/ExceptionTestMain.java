@@ -1,6 +1,8 @@
 package exceptionTest;
 import myLibrary.BasicIo;
 
+/*
+
 class LowRange extends Exception { // sub class of Exception class
 	public LowRange(String message) {
 		super(message);
@@ -38,3 +40,5 @@ public class ExceptionTestMain {
 	}
 
 }
+
+*/

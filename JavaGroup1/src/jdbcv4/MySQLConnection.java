@@ -3,7 +3,6 @@ package jdbcv4;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import jdbcv4.DBinfo;
 import myLibrary.BasicIo;
 
 public class MySQLConnection {
