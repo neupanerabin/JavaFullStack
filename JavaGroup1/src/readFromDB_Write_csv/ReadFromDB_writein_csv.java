@@ -33,7 +33,7 @@ public class ReadFromDB_writein_csv {
             String sql = "SELECT * FROM tbl_person";	// select all data from table name
             ResultSet rs = stmt.executeQuery(sql);		// execute statement
 
-            DefaultTableModel model = new DefaultTableModel();	// declaration of table model
+            final DefaultTableModel model = new DefaultTableModel();	// declaration of table model
             model.addColumn("PID");	// id
             model.addColumn("Name");	// name
             model.addColumn("Address");	// address

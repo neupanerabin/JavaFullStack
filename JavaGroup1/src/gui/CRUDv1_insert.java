@@ -63,7 +63,6 @@ public class CRUDv1_insert extends JFrame implements ActionListener {
 
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getSource() == btnClose) {
 			System.exit(0);

@@ -12,7 +12,6 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	//connect():Connection
 	// 
 	
-	@Override
 	public boolean insert(Person person) {
 		boolean result = false;
 		String sql = "INSERT INTO Student VALUES(?, ?, ?)";
@@ -32,7 +31,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 		return result;
 	}
 	
-	@Override
+//	@Override
 	public Person search(int pid) {
 		String sql = "SELECT * FROM Student WHERE pid=?";
 		Person person = null;
@@ -56,7 +55,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 		return person;
 	}
 	
-	@Override
+//	@Override
 	public boolean update(Person person) {
 		
 		boolean result = false;
@@ -79,7 +78,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 	}
 	
 
-	@Override
+//	@Override
 	public boolean delete(int pid) {
 		boolean result = false;
 		String sql = "DELETE * FROM Student WHERE pid =?";
@@ -99,7 +98,7 @@ public class MySQLCrud extends MySQLConnection implements CRUD{
 		}
 		return result;
 	}
-	@Override
+//	@Override
 	public Vector persons() {
 		Vector allPersons=new Vector();
 		String sql = "SELECT * FROM Student";

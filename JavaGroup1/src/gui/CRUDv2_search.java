@@ -65,7 +65,6 @@ public class CRUDv2_search extends JFrame implements ActionListener {
 
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getSource() == btnClose) {
 			System.exit(0);

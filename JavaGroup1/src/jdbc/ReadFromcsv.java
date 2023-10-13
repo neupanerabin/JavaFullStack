@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ReadFromcsv {
 	
 	public static void main(String[] args) {
-		List<List<String>> records = new ArrayList<>();
+		List<List<String>> records = new ArrayList<List<String>>();
 		try {
 			String csvfilepath = "/Users/rabin/Documents/Student.csv";
 			BufferedReader bufferead = new BufferedReader(new FileReader(csvfilepath));
