@@ -12,6 +12,7 @@ public class Class5Test {
 		
 		System.out.println(obj51);    // call toString
 		System.out.println(obj51.hashCode());
+	
 		
 	}
 
