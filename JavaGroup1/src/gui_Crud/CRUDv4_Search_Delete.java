@@ -1,4 +1,4 @@
-package gui;
+package gui_Crud;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,12 +12,12 @@ import javax.swing.JTextField;
 import global.Global;
 import jdbcv3.CRUDV1;
 
-public class CRUDv3_Search_Update extends JFrame implements ActionListener {
+public class CRUDv4_Search_Delete extends JFrame implements ActionListener {
 	JLabel lblPID, lblName, lblAddress; // Label
 	JTextField txtPID, txtName, txtAddress; // Create Field
-	JButton btnSearch, btnClose, btnUpdate; // Button dec;aration
+	JButton btnSearch, btnClose, btnDelete;
 
-	public CRUDv3_Search_Update() {
+	public CRUDv4_Search_Delete() {
 		setTitle("Button Search");
 		setSize(350, 350);
 		setResizable(false);
@@ -41,19 +41,17 @@ public class CRUDv3_Search_Update extends JFrame implements ActionListener {
 		txtAddress.setBounds(90, 100, 170, 30); // text field frame
 
 		// Search
-		btnSearch = new JButton("Search"); // Button search create
-		btnSearch.setBounds(20, 140, 70, 30); // button position
+		btnSearch = new JButton("Search"); // Button searchcreate
+		btnSearch.setBounds(20, 140, 70, 30); // button place
 		btnSearch.addActionListener(this);
 
-		// Close button
 		btnClose = new JButton("Close"); // Close button create
-		btnClose.setBounds(90, 140, 70, 30); // close button position
+		btnClose.setBounds(90, 140, 70, 30); // close button place
 		btnClose.addActionListener(this);
 
-		// Update button
-		btnUpdate = new JButton("Update"); // BVutton update create
-		btnUpdate.setBounds(160, 140, 70, 30); // update button position
-		btnUpdate.addActionListener(this); // call action listener
+		btnDelete = new JButton("Delete"); // Delete button create
+		btnDelete.setBounds(150, 140, 70, 30); // Delete button position
+		btnDelete.addActionListener(this);
 
 		setLayout(null);
 		add(lblPID); // call for pid
@@ -62,11 +60,10 @@ public class CRUDv3_Search_Update extends JFrame implements ActionListener {
 
 		add(txtPID); // text id area
 		add(txtName); // text name area call
-		add(txtAddress); // text name address call
+		add(txtAddress); // txt name address call
 		add(btnSearch); // save button call
 		add(btnClose); // close button close
-
-		add(btnUpdate); // button update add
+		add(btnDelete); // add delete button
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // terminate the program
@@ -79,15 +76,15 @@ public class CRUDv3_Search_Update extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 		// save Record
-		else if (ae.getSource() == btnSearch) {
+		else if (ae.getSource() == btnSearch) {	// call
 			int pid = Integer.parseInt(txtPID.getText()); // get id
 
-			boolean result = new CRUDV1().search(pid); // boolean value for
+			boolean result = new CRUDV1().search(pid); // call CRUDV1 file
 			if (result) {
 				txtName.setText(Global.name);
 				txtAddress.setText(Global.address);
 
-				JOptionPane.showMessageDialog(this, "Search record suucessfully");
+				JOptionPane.showMessageDialog(this, "Search record suucessfully");	// Display popup box 
 			} else {
 				txtName.setText("");
 				txtAddress.setText("");
@@ -95,24 +92,21 @@ public class CRUDv3_Search_Update extends JFrame implements ActionListener {
 
 			}
 		}
-		else if(ae.getSource() == btnUpdate){
-			int pid = Integer.parseInt(txtPID.getText());	// Get pid 
-			String newName = txtName.getText();	// Get new name
-			String newAddress = txtAddress.getText();	// get new address
+		else if(ae.getSource() == btnDelete) {
+			int pid = Integer.parseInt(txtPID.getText());
 			
-			boolean result = new CRUDV1().update(pid, newName, newAddress);
-			if(result) {
-				JOptionPane.showMessageDialog(this, "Record update suucessfully");
-			} else {
-				JOptionPane.showMessageDialog(this, "Error to  update record ");
-
+			boolean result = new CRUDV1().delete(pid);	// call delete function from CRUDV1
+			if(result=true) {
+				JOptionPane.showMessageDialog(this,"Delete record successfully");
 			}
+			else {
+				JOptionPane.showMessageDialog(this,  "Failed to delete records");
 			}
 		}
-	
+	}
 
 	public static void main(String[] args) {
-		new CRUDv3_Search_Update();
+		new CRUDv4_Search_Delete();
 
 	}
 
