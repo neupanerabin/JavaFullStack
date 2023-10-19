@@ -7,7 +7,7 @@ public class RandomTest {
 	public static void main(String[] args) {
 		
 		// double nextDouble
-		Random random = new Random();
+		Randoms random = new Randoms();
 		double result = random.nextDouble();
 		System.out.println(result);
 		
