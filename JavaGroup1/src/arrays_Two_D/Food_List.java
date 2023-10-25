@@ -13,6 +13,9 @@ public class Food_List {
 		
 		food.add("Burger");
 		food.add("momo");
+		food.add("chowmein");
+		food.remove(1);
+		food.clear();	// this will clear all
 		
 		
 		for(int i = 0; i<food.size(); i++) {
