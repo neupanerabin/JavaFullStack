@@ -16,19 +16,20 @@ public class Main {
 		frame.setLayout(new BorderLayout(10,10));
 
 		
-		JPanel panel1 = new JPanel();
+		JPanel panel1 = new JPanel();	// create panel objects
 		JPanel panel2 = new JPanel();
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
 		JPanel panel5 = new JPanel();
 
-		
-		panel1.setBackground(Color.red);
+		// include colors in the different panels
+		panel1.setBackground(Color.red);	
 		panel2.setBackground(Color.blue);
 		panel3.setBackground(Color.green);
 		panel4.setBackground(Color.black);
 		panel5.setBackground(Color.gray);
 		
+		// put grid dffferent dimensions
 		panel1.setPreferredSize(new Dimension(100,100));
 		panel2.setPreferredSize(new Dimension(100,100));
 		panel3.setPreferredSize(new Dimension(100,100));
@@ -57,6 +58,8 @@ public class Main {
 		panel9.setPreferredSize(new Dimension(50,50));
 		panel10.setPreferredSize(new Dimension(50,50));
 		
+		// include all the new grid in the 
+		// central Grid 
 		panel5.add(panel6,BorderLayout.SOUTH);
 		panel5.add(panel7,BorderLayout.EAST);
 		panel5.add(panel8,BorderLayout.WEST);
