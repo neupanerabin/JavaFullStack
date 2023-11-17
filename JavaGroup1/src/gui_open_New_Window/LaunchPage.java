@@ -15,15 +15,17 @@ public class LaunchPage implements ActionListener{
 	
 	LaunchPage(){
 		
-		mybutton.setBounds(100,160,200,40);
+		mybutton.setBounds(100,160,200,40);	// set bounds to the window
 		mybutton.setFocusable(false);
 		mybutton.addActionListener(this);
 		
 		// frame work created
-		frame.add(mybutton);	// Button add to the frame
+		frame.add(mybutton);	// Button added to the frame
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500,500);
+		frame.setSize(400,500);
+		frame.setLayout(null);	// 
 		frame.setVisible(true);
+	
 		
 	}
 
@@ -32,6 +34,7 @@ public class LaunchPage implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource()==mybutton) {
+			frame.dispose();	// close the launch page and open new page only 
 			NewWindow myWindow = new NewWindow();
 		}
 		
