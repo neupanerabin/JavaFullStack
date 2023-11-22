@@ -14,7 +14,7 @@ public class SalariedEmployee extends Employee {
 	// set Salary
 	public void setWeeklySalary(double salary) {
 		if (salary >= 0.0) {
-			double baseSalary = salary;
+			 weeklySalary = salary;
 		} else {
 			throw new IllegalArgumentException("Weekly salary must be >=0.0");
 		}
@@ -35,8 +35,8 @@ public class SalariedEmployee extends Employee {
 	// return String representation of Salaried Employee
 	@Override
 	public String toString() {
-		return String.format("salaried employee : %s \n%s: $%, .2f", super.toString(), "weekly salary",
+		return String.format("salaried employee : %s %n%s: $%, .2f", super.toString(), "weekly salary",
 				getWeeklySalary());
 	} // end method to String
 
-} 	// end class Salaried
+} // end class Salaried

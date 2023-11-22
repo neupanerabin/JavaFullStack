@@ -16,11 +16,12 @@ public class CommissionEmployee extends Employee {
 
 	// set commission rate
 	public void setCommissionRate(double rate) {
-		if (rate > 0.0 && rate < 1.0)
-			commissionRate = rate;
-		else
-			throw new IllegalArgumentException("Commision rate must be >0.0 and <1.0");
-	} // end method setCommisionRate
+	    if (rate > 0.0 && rate < 1.0) {
+	        commissionRate = rate;
+	    } else {
+	        throw new IllegalArgumentException("Commission rate must be > 0.0 and < 1.0");
+	    }
+	}
 
 	// return Commission rate
 	public double getCommissionRate() {
