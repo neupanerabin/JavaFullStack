@@ -15,6 +15,6 @@ public class Area {
 	  public void getArea() {
 	    int area = length * breadth;
 	    System.out.println("Area: " + area);
-	  }
+	  }                                             
 
 }

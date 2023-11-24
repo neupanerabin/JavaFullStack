@@ -5,6 +5,6 @@
  * @author rabin
  *
  */
-module Employee_Payroll {
+module Calculator {
 	requires java.desktop;
 }
