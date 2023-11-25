@@ -11,7 +11,7 @@ import javax.swing.border.Border;
 public class Labels {
     public static void main(String[] args) {
 
-        ImageIcon image = new ImageIcon("img.jpeg"); // Image load
+        ImageIcon image = new ImageIcon("images/img.jpeg"); // Image load
         Border border = BorderFactory.createLineBorder(Color.green, 4);
 
         JLabel label = new JLabel(); // Label created

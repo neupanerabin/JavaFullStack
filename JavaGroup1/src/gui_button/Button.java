@@ -15,7 +15,7 @@ public class Button extends JFrame implements ActionListener{
 
 	Button() {
 		
-		ImageIcon icon = new ImageIcon("like.png");
+		ImageIcon icon = new ImageIcon("images/like.png");
 
 		button = new JButton(); //button object create
 		button.setBounds(200, 100, 100, 150);	// button create
