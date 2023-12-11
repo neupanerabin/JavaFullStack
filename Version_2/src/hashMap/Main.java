@@ -9,18 +9,24 @@ import javax.swing.JFrame;
 public class Main implements ActionListener {
 	static JButton login;
 	static JButton register;
+	static JButton exit;
 
 	public static void main(String[] args) {
 
 		JFrame frame = new JFrame(); // create frame
 
 		register = new JButton("1. Register");
-		register.setBounds(50, 30, 90, 30);
+		register.setBounds(50, 30, 90, 40);
 		frame.add(register);
 
 		login = new JButton("2. Login ");
-		login.setBounds(50, 60, 90, 30);
+		login.setBounds(50, 70, 90, 40);
 		frame.add(login);
+		
+		exit = new JButton("3. Exit");
+		exit.setBounds(50, 110, 90, 40);
+		frame.add(exit);
+		
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);
@@ -40,7 +46,14 @@ public class Main implements ActionListener {
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// This method will be called when the button is clicked
-				loginSearch.Login();
+				loginSearch.login();
+			}
+		});
+		
+		exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// This method will be called when the button is clicked
+				System.exit(0);
 			}
 		});
 
