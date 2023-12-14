@@ -5,7 +5,7 @@ public class PutintoMap {
 	public static void main(String[] args) {
 
 		HashMap map = new HashMap();
-		map.put("rabin",0);
+		map.put("rabin",10);
 		map.put("ram", 1);
 		map.put("random", 11);
 		map.put("rose", 6);
