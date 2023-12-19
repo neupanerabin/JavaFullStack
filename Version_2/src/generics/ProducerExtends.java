@@ -33,7 +33,7 @@ public class ProducerExtends {
             System.out.println(fruit);
         }
 
-        // basket.add(new Apple()); //Compile-time error
+//         basket.add(new Apple()); //Compile-time error
         // basket.add(new Fruit()); //Compile-time error
     }
 }

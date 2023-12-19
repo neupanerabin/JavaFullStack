@@ -9,6 +9,7 @@ public class Generics {
 		
 		al.add("String:");
 		al.add(10);
+		System.out.println(al);
 		
 	}
 	public static Object getValue(List al) {
