@@ -2,17 +2,11 @@ package jdbc;
 
 public class Products {
 	
-	private int id;
 	private String productId;
 	private String productName;
 	private String productCatId;
 	private float price;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getProductId() {
 		return productId;
 	}
@@ -39,12 +33,11 @@ public class Products {
 	}
 	@Override
 	public String toString() {
-		return "Products [id=" + id + ", productId=" + productId + ", productName=" + productName + ", productCatId="
+		return "Products [ productId=" + productId + ", productName=" + productName + ", productCatId="
 				+ productCatId + ", price=" + price + "]";
 	}
-	public Products(int id, String productId, String productName, String productCatId, float price) {
+	public Products( String productId, String productName, String productCatId, float price) {
 		super();
-		this.id = id;
 		this.productId = productId;
 		this.productName = productName;
 		this.productCatId = productCatId;

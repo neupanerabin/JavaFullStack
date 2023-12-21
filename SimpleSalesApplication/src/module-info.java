@@ -5,7 +5,7 @@
  * @author rabin
  *
  */
-module JavaDbApp {
-	requires java.sql;
+module SimpleSalesApplication {
 	requires java.desktop;
+	requires java.sql;
 }
