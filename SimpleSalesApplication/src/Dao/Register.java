@@ -22,19 +22,19 @@ public class Register {
             switch (choice) {
                 case 1:
                     System.out.println("Enter id:");
-                    int id = scanner.nextInt();
+                    int iduser = scanner.nextInt();
 
-                    System.out.println("Enter Name:");
+                    System.out.println("Enter username:");
                     scanner.nextLine(); // Consume the newline character
                     String username = scanner.nextLine();
 
-                    System.out.println("Enter Address:");
+                    System.out.println("Enter password:");
                     String password = scanner.nextLine();
 
-                    System.out.println("Enter Contact Number:");
-                    double number = scanner.nextDouble();
+                    System.out.println("Enter userType:");
+                    String usertype = scanner.nextLine();
 
-                    Users user = new Users(id, username, password, number);
+                    Users user = new Users(iduser, username, password, usertype);
 
                     try {
                         int rowsAffected = userImpl.insert(user);

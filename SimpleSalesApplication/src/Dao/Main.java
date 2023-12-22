@@ -39,7 +39,7 @@ public class Main {
     }
 
     private static void login() {
-        System.out.println("Executing login...");
-        // Add your login logic here
+        Login login = new Login();
+        login.loginUser();
     }
 }

@@ -2,16 +2,12 @@ package Dao;
 
 public class Users {
 	private int id;
+	private String username;
+	private String password;
+	private String  usertype;
 	@Override
 	public String toString() {
-		return "Users [id=" + id + ", Name=" + Name + ", Address=" + Address + ", ContactNumber=" + ContactNumber + "]";
-	}
-	public Users(int id, String name, String address, double contactNumber) {
-		super();
-		this.id = id;
-		Name = name;
-		Address = address;
-		ContactNumber = contactNumber;
+		return "Users [id=" + id + ", username=" + username + ", password=" + password + ", userType=" + usertype + "]";
 	}
 	public int getId() {
 		return id;
@@ -19,27 +15,34 @@ public class Users {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return Name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		Name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getAddress() {
-		return Address;
+	public String getPassword() {
+		return password;
 	}
-	public void setAddress(String address) {
-		Address = address;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public double getContactNumber() {
-		return ContactNumber;
+	public String getUserType() {
+		return usertype;
 	}
-	public void setContactNumber(double contactNumber) {
-		ContactNumber = contactNumber;
+	public void setUserType(String userType) {
+		this.usertype = userType;
 	}
-	private String Name;
-	private String Address;
-	private double ContactNumber;
+	
+	public Users(int id, String username, String password, String usertype) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.usertype = usertype;
+	}
+	
+	
 	
 
 }
