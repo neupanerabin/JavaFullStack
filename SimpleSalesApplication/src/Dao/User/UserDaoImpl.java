@@ -61,7 +61,6 @@ public  class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-//	public LoginResult<Boolean, String>loginCheck(String username, String password, String usertype) throws SQLException {
 	public Dao.LoginResult loginCheck(String username, String password, String usertype) throws SQLException {
 
 		Connection conn = DatabaseInformation.getDatabaseConnection();

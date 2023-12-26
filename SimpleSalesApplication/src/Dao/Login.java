@@ -4,6 +4,7 @@ import Dao.User.UserDaoImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+//import Dao.LoginResult;
 
 public class Login {
 
@@ -50,8 +51,22 @@ public class Login {
 
             // Check login credentials using UserDaoImpl
             try {
-                if (userImpl.loginCheck(username, password, usertype) != null) {
-                    showOtherFunctions();
+            	LoginResult loginResult = userImpl.loginCheck(username, password, usertype);
+
+                if (loginResult.getKey()) {
+                    // Login successful
+                    String userType = loginResult.getValue();
+                    System.out.println("Login successful. User type: " + userType);
+
+                    // Navigate to the corresponding page based on user type
+                    if ("user".equalsIgnoreCase(userType)) {
+                        openUserPage();
+                    } else if ("admin".equalsIgnoreCase(userType)) {
+                        openAdminPage();
+                    } else {
+                        System.out.println("Invalid user type.");
+                    }
+
                     break;
                 } else {
                     System.out.println("Login failed. Please try again.");
@@ -62,29 +77,6 @@ public class Login {
         }
     }
 
-    private void showOtherFunctions() {
-        while (true) {
-            System.out.println("1. Change Password");
-            System.out.println("2. Register a New User");
-            System.out.println("3. Logout");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
-
-            switch (choice) {
-                case 1:
-                    changePassword();
-                    break;
-                case 2:
-                    registerNewUser();
-                    break;
-                case 3:
-                    return; // Logout and exit the loop
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
-        }
-    }
 
     private void changePassword() {
         // Implement logic to change the password
@@ -121,7 +113,14 @@ public class Login {
         }
     }
 
-    void showLogin() {
-        System.out.println("Welcome to Login");
+    private void openUserPage() {
+        System.out.println("Opening user page...");
+        AdminPage ad= new AdminPage();
+        ad.adminPage();
+    }
+
+    private void openAdminPage() {
+        System.out.println("Opening admin page...");
+        // Add logic to navigate to the admin page
     }
 }
