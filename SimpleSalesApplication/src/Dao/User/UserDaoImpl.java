@@ -125,47 +125,48 @@ public  class UserDaoImpl implements UserDao {
 
 	
 
-	public boolean changePassword(String username, String newPassword) throws SQLException {
-		Connection conn = DatabaseInformation.getDatabaseConnection();
-		PreparedStatement ps = null;
+public boolean changePassword(String username, String newPassword) throws SQLException {
+    Connection conn = DatabaseInformation.getDatabaseConnection();
+    PreparedStatement ps = null;
 
-		try {
-			// Use a parameterized query to prevent SQL injection
-			String updateQuery = "UPDATE user SET password = ? WHERE username = ?";
-			ps = conn.prepareStatement(updateQuery);
+    try {
+        // Use a parameterized query to prevent SQL injection
+        String updateQuery = "UPDATE user SET password = ? WHERE username = ?";
+        ps = conn.prepareStatement(updateQuery);
 
-			// Set values for the parameters in the prepared statement
-			ps.setString(1, newPassword);
-			ps.setString(2, username);
+        // Set values for the parameters in the prepared statement
+        ps.setString(1, newPassword);
+        ps.setString(2, username);
 
-			// Execute the update
-			int rowsAffected = ps.executeUpdate();
+        // Execute the update
+        int rowsAffected = ps.executeUpdate();
 
-			if (rowsAffected > 0) {
-				System.out.println("Password changed successfully.");
-			} else {
-				System.out.println("Failed to change password. User not found.");
-			}
+        if (rowsAffected > 0) {
+            System.out.println("Password changed successfully.");
+            return true;
+        } else {
+            System.out.println("Failed to change password. User not found.");
+            return false;
+        }
 
-		} catch (SQLException e) {
-			// Handle any SQL exceptions here
-			e.printStackTrace();
-		} finally {
-			// Close resources in a finally block to ensure they are closed even if an
-			// exception occurs
-			try {
-				if (ps != null) {
-					ps.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return false;
-	}
+    } catch (SQLException e) {
+        // Handle any SQL exceptions here
+        e.printStackTrace();
+    } finally {
+        // Close resources in a finally block to ensure they are closed even if an exception occurs
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    return false; // Moved inside the finally block
+}
 
 	@Override
 	public boolean LoginResult(String username, String password, String usertype) throws SQLException {
@@ -178,6 +179,10 @@ public  class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
+
+	
 
 	
 }

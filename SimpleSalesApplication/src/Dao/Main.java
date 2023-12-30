@@ -1,5 +1,5 @@
 package Dao;
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -13,21 +13,26 @@ public class Main {
             System.out.println("2. Login");
             System.out.println("3. Exit");
 
-            int choice = scanner.nextInt();
+            try {
+                int choice = scanner.nextInt();
 
-            switch (choice) {
-                case 1:
-                    register();
-                    break;
-                case 2:
-                    login();
-                    break;
-                case 3:
-                    System.out.println("Exiting the program.");
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter a valid option.");
+                switch (choice) {
+                    case 1:
+                        register();
+                        break;
+                    case 2:
+                        login();
+                        break;
+                    case 3:
+                        System.out.println("Exiting the program.");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please enter a valid option.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid option (numeric).");
+                scanner.nextLine(); // Consume the invalid input to avoid an infinite loop
             }
         }
     }
@@ -35,7 +40,6 @@ public class Main {
     private static void register() {
        Register register = new Register();
        register.registerUser();
-        
     }
 
     private static void login() {

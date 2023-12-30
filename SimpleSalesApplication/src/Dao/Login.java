@@ -56,7 +56,7 @@ public class Login {
 				if (loginResult.getKey()) {
 					// Login successful
 					String userType = loginResult.getValue();
-					System.out.println("Login successful. User type: " + userType);
+					System.out.println("Login successful. \n User type: " + userType);
 
 					// Navigate to the corresponding page based on user type
 					if ("usertype".equalsIgnoreCase(userType)) {
@@ -77,19 +77,7 @@ public class Login {
 		}
 	}
 
-	private void changePassword() {
-		// Implement logic to change the password
-		System.out.println("Enter new password:");
-		String newPassword = scanner.nextLine();
-
-		// Update the password using UserDaoImpl
-		try {
-			userImpl.changePassword(username, newPassword);
-			System.out.println("Password changed successfully.");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 //	private void registerNewUser() {
 //		// Implement logic to register a new user
@@ -120,7 +108,7 @@ public class Login {
 	}
 
 	private void openAdminPage() {
-		System.out.println("Opening admin page...");
+		System.out.println("\n *********** Opening admin page...*************");
 		AdminPage admin = new AdminPage();
 		admin.adminPage();
 	}
