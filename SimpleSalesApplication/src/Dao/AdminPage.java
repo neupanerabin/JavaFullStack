@@ -34,6 +34,9 @@ public class AdminPage {
 
 	private void additem() {
 		System.out.println("Add items change from Here2");
+		AddItems additems = new AddItems();
+		additems.additems();
+		
 
 	}
 
@@ -44,6 +47,11 @@ public class AdminPage {
 
 	    String currentUsername = scanner.nextLine();
 
+	    System.out.println("Enter current userid :");
+	    int iduser = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+	    
 	    System.out.println("Enter new password:");
 	    String newPassword = scanner.nextLine();
 
@@ -53,7 +61,7 @@ public class AdminPage {
 
 	    // Update the password using UserDaoImpl
 	    try {
-	        boolean success = userImpl.changePassword(currentUsername, newPassword);
+	        boolean success = userImpl.changePassword(currentUsername, newPassword, iduser);
 
 	        if (success) {
 	            System.out.println("Password changed successfully.");

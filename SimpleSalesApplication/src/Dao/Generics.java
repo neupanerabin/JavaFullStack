@@ -8,17 +8,21 @@ public interface Generics<T> {
 
 	T get(String userId) throws SQLException;
 
-	int insert(Users user) throws SQLException;
+	boolean insert(Users user) throws SQLException;
 
 	int update(T user, String userId) throws SQLException;
 
 	int delete(String UserId) throws SQLException;
 	
-	boolean changePassword(String username, String password) throws SQLException;
+	boolean changePassword(String username, String password, int iduser) throws SQLException;
 
 	boolean LoginResult(String username, String password, String usertype) throws SQLException;
 
 	Dao.LoginResult loginCheck(String username, String password, String usertype) throws SQLException;
+	
+	// Add Items
+	boolean additems(String productName, float productPrice) throws SQLException;
+
 
 
 }

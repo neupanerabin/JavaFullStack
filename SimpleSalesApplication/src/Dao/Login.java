@@ -59,7 +59,7 @@ public class Login {
 					System.out.println("Login successful. \n User type: " + userType);
 
 					// Navigate to the corresponding page based on user type
-					if ("usertype".equalsIgnoreCase(userType)) {
+					if ("user".equalsIgnoreCase(userType)) {
 						openUserPage();
 					} else if ("admin".equalsIgnoreCase(userType)) {
 						openAdminPage();
@@ -78,27 +78,6 @@ public class Login {
 	}
 
 	
-
-//	private void registerNewUser() {
-//		// Implement logic to register a new user
-//		System.out.println("Enter new username:");
-//		String newUsername = scanner.nextLine();
-//
-//		System.out.println("Enter new password:");
-//		String newPassword = scanner.nextLine();
-//
-//		System.out.println("Enter new userType:");
-//		String newUserType = scanner.nextLine();
-//
-//		// Register the new user using UserDaoImpl
-//		try {
-//			Users newUser = new Users(0, newUsername, newPassword, newUserType);
-//			userImpl.insert(newUser);
-//			System.out.println("User registered successfully.");
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 
 	private void openUserPage() {
 		System.out.println("Opening user page...");

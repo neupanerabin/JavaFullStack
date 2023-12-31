@@ -36,7 +36,7 @@ public class Register {
                     Users user = new Users(iduser, username, password, usertype);
 
                     try {
-                        int rowsAffected = userImpl.insert(user);
+                        boolean rowsAffected = userImpl.insert(user);
                         // Print the number of rows affected by the insertion
                         System.out.println("Rows Affected: " + rowsAffected);
                     } catch (SQLException e) {
