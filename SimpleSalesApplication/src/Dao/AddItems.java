@@ -33,7 +33,7 @@ public class AddItems {
 		
 		while(true) {
 			
-			System.out.println("Product Name");
+			System.out.println("Product Name: ");
 			String name = scanner.nextLine();
 			
 			System.out.println("Price: ");
