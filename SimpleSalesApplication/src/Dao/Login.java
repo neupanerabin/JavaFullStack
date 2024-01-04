@@ -21,7 +21,6 @@ public class Login {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -76,8 +75,6 @@ public class Login {
 			}
 		}
 	}
-
-	
 
 	private void openUserPage() {
 		System.out.println("Opening user page...");
