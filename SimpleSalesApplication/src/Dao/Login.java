@@ -75,7 +75,7 @@ public class Login {
 			}
 		}
 	}
-
+// open another page
 	private void openUserPage() {
 		System.out.println("Opening user page...");
 		UserPage user = new UserPage();
