@@ -22,6 +22,9 @@ public interface Generics<T> {
 	
 	// Add Items
 	boolean additems(String productName, float productPrice) throws SQLException;
+	
+	boolean viewitems(String productName, float productPrice) throws SQLException;
+
 
 
 

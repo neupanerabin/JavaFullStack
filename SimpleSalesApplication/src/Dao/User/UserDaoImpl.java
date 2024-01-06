@@ -10,6 +10,8 @@ import Dao.DatabaseInformation;
 import Dao.Users;
 import Dao.Login;
 import Dao.LoginResult;
+import Dao.Item;
+import java.util.ArrayList;
 
 public class UserDaoImpl implements UserDao {
 
@@ -189,7 +191,7 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
 	@Override
 	public boolean additems(String productName, float productPrice) throws SQLException {
 		try {
@@ -200,7 +202,7 @@ public class UserDaoImpl implements UserDao {
 			PreparedStatement ps = conn.prepareStatement(insert);
 
 			// Set values for the parameters in the prepared statement
-			
+
 			ps.setString(1, productName);
 			ps.setFloat(2, productPrice);
 
@@ -220,6 +222,44 @@ public class UserDaoImpl implements UserDao {
 			// Return false to indicate a failed insertion
 			return false;
 		}
+	}
+
+	public boolean viewitems(String productName, float productPrice) throws SQLException {
+	    List<Item> items = new ArrayList<>();
+
+		try {
+			Connection conn = DatabaseInformation.getDatabaseConnection();
+			String display = "SELECT * FROM items";
+			PreparedStatement ps = conn.prepareStatement(display);
+
+			int rowsAffected = ps.executeUpdate();
+			
+            ResultSet rs = ps.executeQuery();
+
+
+			// Process the result set
+			while (rs.next()) {
+				int itemId = rs.getInt("itemId");
+				String productName1 = rs.getString("productName");
+				float productPrice1 = rs.getFloat("productPrice");
+
+				// Create an Item object and add it to the list
+				Item item = new Item(itemId, productName1, productPrice1);
+				items.add(item);
+			}
+
+			// Close resources
+			rs.close();
+			ps.close();
+			conn.close();
+
+			return rowsAffected > 0;
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return false;
+
 	}
 
 }
