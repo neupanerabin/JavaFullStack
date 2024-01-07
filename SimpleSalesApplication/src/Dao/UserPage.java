@@ -12,7 +12,7 @@ public class UserPage {
 	void userpage() {
 
 		while (true) {
-			System.out.println("Choose an option:");
+			System.out.println("\n Choose an option:");
 			System.out.println("1. View Item");
 			System.out.println("2. Order Item");
 			System.out.println("3. Billing");
@@ -48,27 +48,38 @@ public class UserPage {
 		}
 	}
 
-	private void billing() {
-		System.out.println("This is billing");
-
-	}
-
 	private void orderitem() {
 		System.out.println("This is order Items");
+		System.out.println("\t \n **********Products***********");
+		try {
+			String productName = null;
+			int orderid = 0;
+			int quantity = 0;
+			boolean rowsAffected = userImpl.orderItem(orderid, productName, quantity);
+			// Print the number of rows affected by the insertion
+			System.out.println("Rows Affected: " + rowsAffected);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void billing() {
+		System.out.println("This is billing");
+		
+
 	}
 
 	private void viewitem() {
-		System.out.println("This is view items");
-		System.out.println("**********Products***********");
+		System.out.println("\t \n **********Products***********");
 		try {
-            String productName = null;
-			float price = 0;
+			String productName = null;
+			Float price = (float) 0;
 			boolean rowsAffected = userImpl.viewitems(productName, price);
-            // Print the number of rows affected by the insertion
-            System.out.println("Rows Affected: " + rowsAffected);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+			// Print the number of rows affected by the insertion
+			System.out.println("Rows Affected: " + rowsAffected);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void changePassword() {

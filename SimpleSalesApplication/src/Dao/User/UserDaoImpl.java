@@ -10,7 +10,6 @@ import Dao.DatabaseInformation;
 import Dao.Users;
 import Dao.Login;
 import Dao.LoginResult;
-import Dao.Item;
 import java.util.ArrayList;
 
 public class UserDaoImpl implements UserDao {
@@ -193,7 +192,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public boolean additems(String productName, float productPrice) throws SQLException {
+	public boolean additems(String productName, Float productPrice) throws SQLException {
 		try {
 			Connection conn = DatabaseInformation.getDatabaseConnection();
 
@@ -224,42 +223,74 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
 
-	public boolean viewitems(String productName, float productPrice) throws SQLException {
-	    List<Item> items = new ArrayList<>();
-
+	// Call this one
+	@Override
+	public boolean viewitems(String productName, Float productPrice) throws SQLException {
 		try {
 			Connection conn = DatabaseInformation.getDatabaseConnection();
-			String display = "SELECT * FROM items";
-			PreparedStatement ps = conn.prepareStatement(display);
+			String selectQuery;
 
-			int rowsAffected = ps.executeUpdate();
-			
-            ResultSet rs = ps.executeQuery();
-
-
-			// Process the result set
-			while (rs.next()) {
-				int itemId = rs.getInt("itemId");
-				String productName1 = rs.getString("productName");
-				float productPrice1 = rs.getFloat("productPrice");
-
-				// Create an Item object and add it to the list
-				Item item = new Item(itemId, productName1, productPrice1);
-				items.add(item);
+			if (productName != null && productPrice != 0) {
+				// If both productName and productPrice are provided, view specific items
+				selectQuery = "SELECT * FROM items WHERE productName = ? AND productPrice = ?";
+			} else {
+				// Otherwise, view all items
+				selectQuery = "SELECT * FROM items";
 			}
 
-			// Close resources
-			rs.close();
-			ps.close();
-			conn.close();
+			try (PreparedStatement ps = conn.prepareStatement(selectQuery)) {
+				if (productName != null && productPrice != 0) {
+					// Set values for the parameters in the prepared statement
+					ps.setString(1, productName);
+					ps.setFloat(2, productPrice);
+				}
 
-			return rowsAffected > 0;
+				try (ResultSet rs = ps.executeQuery()) {
+					// Display the items
+	                System.out.printf("\t %-20s%-20s%n", "Product Name", "Product Price");
+					while (rs.next()) {
+						String product = rs.getString("productName");
+						float price = rs.getFloat("productPrice");
 
+						// Print each row in a fixed-width format
+	                    System.out.printf("\t %-20s%-20s%n", product, price);					}
+
+					// Return true to indicate successful viewing of items
+					return true;
+				}
+			}
 		} catch (SQLException ex) {
+			// Handle the exception (e.g., log it)
 			ex.printStackTrace();
+
+			// Return false to indicate failure in viewing items
 		}
 		return false;
-
 	}
+	
+	public boolean orderItem(int orderId, String productName, int quantity) {
+        try {
+            Connection conn = DatabaseInformation.getDatabaseConnection();
 
+            // Use a parameterized query to prevent SQL injection
+            String insert = "INSERT INTO order_items (order_id, product_name, quantity) VALUES (?, ?, ?)";
+            try (PreparedStatement ps = conn.prepareStatement(insert)) {
+                // Set values for the parameters in the prepared statement
+                ps.setInt(1, orderId);
+                ps.setString(2, productName);
+                ps.setInt(3, quantity);
+
+                // Execute the update
+                int rowsAffected = ps.executeUpdate();
+
+                // Return true if at least one row was affected, indicating a successful insertion
+                return rowsAffected > 0;
+            }
+        } catch (SQLException ex) {
+            // Handle the exception (e.g., log it)
+            ex.printStackTrace();
+            // Return false to indicate a failed insertion
+            return false;
+        }
+	}
 }
