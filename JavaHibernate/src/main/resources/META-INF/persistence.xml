@@ -8,15 +8,9 @@
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Mhiits"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="Neupane@11"/>
-
-            <property name="hibernate.hdm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.show_sql" value="true"/>
-
             <property name="hibernate.mapping" value="org.example.entity.Product"/>
-
-
         </properties>
-
-
     </persistence-unit>
 </persistence>
