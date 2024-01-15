@@ -44,6 +44,22 @@ public class Student {
 
     }
 
+    public String getStudnetName() {
+        return studnetName;
+    }
+
+    public String getStudentAddress() {
+        return studentAddress;
+    }
+
+    public String getStudentRollno() {
+        return studentRollno;
+    }
+
+    public String getStudentGrade() {
+        return studentGrade;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -54,6 +70,7 @@ public class Student {
                 ", studentGrade='" + studentGrade + '\'' +
                 '}';
     }
+
 
 
 }

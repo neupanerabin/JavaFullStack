@@ -225,7 +225,7 @@ public class UserDaoImpl implements UserDao {
 
 	// Call this one
 	@Override
-	public boolean viewitems(String productName, Float productPrice) throws SQLException {
+	public boolean viewitems(int itemid, String productName, Float productPrice) throws SQLException {
 		try {
 			Connection conn = DatabaseInformation.getDatabaseConnection();
 			String selectQuery;
@@ -247,13 +247,15 @@ public class UserDaoImpl implements UserDao {
 
 				try (ResultSet rs = ps.executeQuery()) {
 					// Display the items
-	                System.out.printf("\t %-20s%-20s%n", "Product Name", "Product Price");
+	                System.out.printf("\t %-20s%-20s%-20s%n", "Product ID", "Product Name", "Product Price");
 					while (rs.next()) {
+						int iditem = rs.getInt("itemsid");
 						String product = rs.getString("productName");
 						float price = rs.getFloat("productPrice");
 
 						// Print each row in a fixed-width format
-	                    System.out.printf("\t %-20s%-20s%n", product, price);					}
+	                    System.out.printf("\t %-20s%-20s%-20s%n", iditem, product, price);
+					}
 
 					// Return true to indicate successful viewing of items
 					return true;
@@ -268,29 +270,79 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 	
-	public boolean orderItem(int orderId, String productName, int quantity) {
+	public boolean orderItem(int orderId, String productName, int quantity, int userId, int itemId) throws SQLException {
+	    Connection conn = DatabaseInformation.getDatabaseConnection();
+	    PreparedStatement ps = null;
+
+	    try {
+	        // Use a parameterized query to prevent SQL injection
+	        String insertQuery = "INSERT INTO order_items (order_id, product_name, quantity, user_id, item_id) VALUES (?, ?, ?, ?, ?)";
+	        ps = conn.prepareStatement(insertQuery);
+
+	        // Set values for the parameters in the prepared statement
+	        ps.setInt(1, orderId);
+	        ps.setString(2, productName);
+	        ps.setInt(3, quantity);
+	        ps.setInt(4, userId);
+	        ps.setInt(5, itemId);
+
+	        // Execute the update
+	        int rowsAffected = ps.executeUpdate();
+
+	        // Return true if at least one row was affected, indicating a successful insertion
+	        return rowsAffected > 0;
+
+	    } catch (SQLException e) {
+	        // Handle any SQL exceptions here
+	        e.printStackTrace();
+	        return false;
+	    } finally {
+	        // Close resources in a finally block to ensure they are closed even if an exception occurs
+	        try {
+	            if (ps != null) {
+	                ps.close();
+	            }
+	            if (conn != null) {
+	                conn.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	}
+	public boolean viewBillingRecords() {
         try {
             Connection conn = DatabaseInformation.getDatabaseConnection();
 
-            // Use a parameterized query to prevent SQL injection
-            String insert = "INSERT INTO order_items (order_id, product_name, quantity) VALUES (?, ?, ?)";
-            try (PreparedStatement ps = conn.prepareStatement(insert)) {
-                // Set values for the parameters in the prepared statement
-                ps.setInt(1, orderId);
-                ps.setString(2, productName);
-                ps.setInt(3, quantity);
+            // Use a simple query to retrieve all billing records
+            String selectQuery = "SELECT * FROM order_items";
+            try (PreparedStatement ps = conn.prepareStatement(selectQuery);
+                 ResultSet rs = ps.executeQuery()) {
 
-                // Execute the update
-                int rowsAffected = ps.executeUpdate();
+                // Display the billing records
+                System.out.printf("%-20s%-20s%-20s%-20s%n", "Record ID", "Customer Name", "Product Name", "Total Amount");
+                while (rs.next()) {
+                    int recordID = rs.getInt("record_id");
+                    String customerName = rs.getString("customer_name");
+                    String productName = rs.getString("product_name");
+                    int quantity = rs.getInt("quantity");
+                    float totalAmount = rs.getFloat("total_amount");
 
-                // Return true if at least one row was affected, indicating a successful insertion
-                return rowsAffected > 0;
+                    // Print each row in a fixed-width format
+                    System.out.printf("%-20s%-20s%-20s%-20s%n", recordID, customerName, productName, totalAmount);
+                }
+
+                // Return true to indicate successful viewing of billing records
+                return true;
             }
         } catch (SQLException ex) {
             // Handle the exception (e.g., log it)
             ex.printStackTrace();
-            // Return false to indicate a failed insertion
+            // Return false to indicate failure in viewing billing records
             return false;
         }
-	}
+    }
+
+	
+
 }

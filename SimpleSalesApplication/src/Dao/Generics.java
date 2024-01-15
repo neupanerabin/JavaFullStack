@@ -23,8 +23,10 @@ public interface Generics<T> {
 	// Add Items
 	boolean additems(String productName, Float productPrice) throws SQLException;
 
-	boolean viewitems(String productName, Float productPrice) throws SQLException;
+//	boolean viewitems(String productName, Float productPrice) throws SQLException;
 
-	boolean orderItem(int orderId, String productName, int quantity) throws SQLException;
+	boolean orderItem(int orderId, String productName, int quantity, int userId, int ItemId) throws SQLException;
+
+	boolean viewitems(int itemid, String productName, Float productPrice) throws SQLException;
 
 }
