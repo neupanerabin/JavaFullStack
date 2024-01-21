@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SampleController {
-
     private FoodMaker foodMaker;
     FoodMaker foodMakerTwo;
 
@@ -19,10 +18,10 @@ public class SampleController {
         foodMakerTwo = theFoodMakerTwo;
     }
 
-    @GetMapping("/greeting")
-    public String getGreeting() {
-        return ("Hello Greetings ");
-    }
+//    @GetMapping("/greeting")
+//    public String getGreeting() {
+//        return ("Hello Greetings ");
+//    }
 
     @GetMapping("/prepareFood")
     public String prepareFood() {
