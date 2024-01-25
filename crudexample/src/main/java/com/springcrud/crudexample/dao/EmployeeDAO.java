@@ -14,6 +14,7 @@ public interface EmployeeDAO {
 
     // save
     Employee save(Employee employee);
+
     //delete
     void delete(int id);
 }

@@ -8,27 +8,27 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class EmployeeDAOImpl implements EmployeeDAO{
+public class EmployeeDAOImpl implements EmployeeDAO {
 
     EntityManager entityManager;
 
-    public  EmployeeDAOImpl(EntityManager entityManager){
+    public EmployeeDAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public List<Employee> findAll(){
+    public List<Employee> findAll() {
         TypedQuery<Employee> selectAllQuery = entityManager.createQuery("From Employee ", Employee.class);
         List<Employee> allEmployee = selectAllQuery.getResultList();
-        return  allEmployee;
+        return allEmployee;
 
     }
 
 
     @Override
     public Employee findById(int id) {
-        Employee employee = entityManager.find(Employee.class, id);
-        return employee;
+        Employee employeeByid = entityManager.find(Employee.class, id);
+        return employeeByid;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public void delete(int id) {
-        Employee employee = entityManager.find(Employee.class, id);
-        entityManager.remove(id);
+        Employee deleteEmployee = entityManager.find(Employee.class, id);
+        entityManager.remove(deleteEmployee);
     }
 }

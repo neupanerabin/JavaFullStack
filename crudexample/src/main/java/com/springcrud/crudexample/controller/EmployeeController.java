@@ -16,16 +16,20 @@ public class EmployeeController {
 
    @GetMapping("/employees")
    public List<Employee> findAll(){
-
        List<Employee> allEmployee = employeeService.findAll();
-     return allEmployee;
+       return allEmployee;
    }
+    @GetMapping("employees/{employeeId}")
+    public Employee findById(@PathVariable int employeeId){
+        Employee employee = employeeService.findById(employeeId);
+        return employee;
+    }
 
     @PostMapping("/employees")
     public Employee insertEmployee(@RequestBody Employee employee){
         employee.setId(0);
-        Employee insertedEmployee=employeeService.save(employee);
-        return insertedEmployee;
+        Employee insertEmployee = employeeService.save(employee);
+        return insertEmployee;
     }
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee employee){
@@ -33,18 +37,11 @@ public class EmployeeController {
         return updatedEmployee;
     }
 
-    @GetMapping("employees/{employeeId}")
-    public Employee findById(@PathVariable int employeeId){
-            Employee employee = employeeService.findById(employeeId);
-            if(employee == null){
-                throw new RuntimeException("Employee not found for id"+ employeeId);
-            }
-            return employee;
-    }
 
+    @DeleteMapping("/employees/{employeeId}")
     public String deleteEmployee(@PathVariable int employeeId){
             employeeService.delete(employeeId);
-            return "Employee id delete"+ employeeId;
+            return "Employee deleted for id : "+ employeeId;
     }
 
 }

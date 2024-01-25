@@ -3,21 +3,32 @@ package com.springcrud.crudexample.service;
 import com.springcrud.crudexample.dao.EmployeeDAO;
 import com.springcrud.crudexample.entity.Employee;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-        EmployeeDAO employeeDao;
+    private final EmployeeDAO employeeDao;
+
+    @Autowired
+    public EmployeeServiceImpl(EmployeeDAO employeeDao) {
+        this.employeeDao = employeeDao;
+    }
     @Override
     public List<Employee> findAll() {
-        return null;
+        List<Employee> allEmployees = employeeDao.findAll();
+        return allEmployees;
     }
 
     @Override
     public Employee findById(int id) {
-        return null;
+        Employee employee = employeeDao.findById(id);
+        if(employee == null){
+            throw new RuntimeException("Employee not found for id: "+ id);
+        }
+        return employee;
     }
 
     @Transactional
@@ -26,9 +37,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee saveEmployee = employeeDao.save(employee);
         return saveEmployee;
     }
-
+    @Transactional
     @Override
     public void delete(int id) {
-
+        employeeDao.delete(id);
     }
 }
