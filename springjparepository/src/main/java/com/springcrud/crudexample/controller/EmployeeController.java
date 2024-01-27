@@ -2,7 +2,6 @@ package com.springcrud.crudexample.controller;
 
 import com.springcrud.crudexample.dao.EmployeeRepository;
 import com.springcrud.crudexample.entity.Employee;
-import com.springcrud.crudexample.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
