@@ -2,9 +2,11 @@ package com.springcrud.crudexample.controller;
 
 import com.springcrud.crudexample.dao.EmployeeRepository;
 import com.springcrud.crudexample.entity.Employee;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -19,9 +21,21 @@ public class EmployeeController {
        List<Employee> allEmployee = employeeService.findAll();
        return allEmployee;
    }
+    @GetMapping("/employees/orderByEmail")
+    public List<Employee> findByOrderEmail() {
+        List<Employee> allEmployee= employeeService.findAllByOrderByEmailDesc();
+        return allEmployee;
+    }
+
+    @GetMapping("/employees/orderByFirstName")
+    public List<Employee> findByOrderFirst() {
+        List<Employee> allEmployee= employeeService.getResultOrderByFirstName(Sort.by("firstName"));
+        return allEmployee;
+    }
     @GetMapping("employees/{employeeId}")
     public Employee findById(@PathVariable int employeeId){
-        Employee employee = employeeService.findById(employeeId);
+        Optional<Employee> optionalEmployee = employeeService.findById(employeeId);
+        Employee employee = optionalEmployee.orElse(new Employee());
         return employee;
     }
 
@@ -40,7 +54,7 @@ public class EmployeeController {
 
     @DeleteMapping("/employees/{employeeId}")
     public String deleteEmployee(@PathVariable int employeeId){
-            employeeService.delete(employeeId);
+            employeeService.deleteById(employeeId);
             return "Employee deleted for id : "+ employeeId;
     }
 

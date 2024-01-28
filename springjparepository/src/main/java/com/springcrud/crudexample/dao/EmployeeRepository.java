@@ -1,21 +1,20 @@
 package com.springcrud.crudexample.dao;
 
 import com.springcrud.crudexample.entity.Employee;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface EmployeeRepository extends JpaRepository {
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
-    // findAll]
-    List<Employee> findAll();
+    @Query(value="Select e From Employee e")
+    List<Employee> getResultOrderByFirstName(Sort firstName);
+    List<Employee> findAllByOrderByEmailDesc();
 
-    // findBy ID
-    Employee findById(int id);
 
-    // save
-    Employee save(Employee employee);
-
-    //delete
-    void delete(int id);
 }

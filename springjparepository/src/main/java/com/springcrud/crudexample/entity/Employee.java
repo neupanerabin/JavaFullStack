@@ -3,7 +3,7 @@ package com.springcrud.crudexample.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employeejpa")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
