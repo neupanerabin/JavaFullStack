@@ -1,0 +1,13 @@
+package com.springcrud.crudexample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EmployeeDataRest {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EmployeeDataRest.class, args);
+	}
+
+}
