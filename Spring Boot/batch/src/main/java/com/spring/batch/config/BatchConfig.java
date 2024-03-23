@@ -63,8 +63,9 @@ public class BatchConfig {
 
     @Bean
     public Job runJob(){
-        return new JobBuilder("importStudent", jobRepository)
+        return new JobBuilder("importStudents", jobRepository)
                 .start(importStep())
+
                 .build();
     }
 
