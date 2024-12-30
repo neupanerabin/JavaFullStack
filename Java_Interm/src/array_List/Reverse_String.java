@@ -7,19 +7,23 @@ package array_List;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class ArrayLists {
+public class Reverse_String {
     public static void main(String[] args){
 
-        ArrayList<String> people = new ArrayList<>();
+        // Initialization to array
+        List<String> people = new ArrayList<>();
 
-        int[] array = new int[100];
+        // Add string to list
         people.add("5");
         people.add("2");
         people.add("9");
         people.add("4");
+//        people.remove(1);
 
+        // reverse the string
         Collections.reverse(people);
-        System.out.println(people);
+        System.out.println(people);  // Display
     }
 }
