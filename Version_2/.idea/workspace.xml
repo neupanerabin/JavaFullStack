@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e942aee0-d64a-4a06-8661-a82b35181b6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/eclipse-workspace.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Calculator/Calculator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Employee_Payroll/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Employee_Payroll/Employee_Payroll.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaGroup1/JavaGroup1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaGroup1/classes/production/JavaGroup1/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaGroup1/src/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java_Interm/src/array_List/Reverse_String.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Employee_Payroll/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Employee_Payroll/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Employee_Payroll/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Employee_Payroll/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleSalesApplication/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleSalesApplication/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/Class.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/Collection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/FirstClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/FirstClassExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Collection/Static_Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Optional/Optional_main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Queue/ArrayDeques.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/comparable/Laptop$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/comparable/Laptop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/functionalInterface/JavaPECS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/functionalInterface/MyFunctionalInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/functionalInterface/Myfunction_Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ConsumerSuper$Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ConsumerSuper$Fruit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ConsumerSuper$MustangApple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ConsumerSuper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ConsumerSuperMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/Generics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ProducerExtends$Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ProducerExtends$Fruit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/generics/ProducerExtends.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Login$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Main$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/PutintoMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Register$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hashMap/Register.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/passByRefrence/PassByRefrence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/Open_Closed/package-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/single_Responsibility/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/single_Responsibility/InvoiceDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/single_Responsibility/InvoicePrinter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/single_Responsibility/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/solid_principles/single_Responsibility/Marker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/stream/JavaOptional.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/stream/JavaStreamAPIExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/stream/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/treeMap/TreeMaps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/Class.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/Collection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/FirstClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/FirstClassExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/Static_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Optional/Optional_main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Queue/ArrayDeques.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comparable/Laptop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functionalInterface/JavaPECS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functionalInterface/MyFunctionalInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functionalInterface/Myfunction_Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generics/ConsumerSuper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generics/ConsumerSuperMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generics/Generics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generics/ProducerExtends.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hashMap/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hashMap/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hashMap/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hashMap/PutintoMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hashMap/Register.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/passByRefrence/PassByRefrence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/Open_Closed/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/single_Responsibility/Invoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/single_Responsibility/InvoiceDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/single_Responsibility/InvoicePrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/single_Responsibility/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_principles/single_Responsibility/Marker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stream/JavaOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stream/JavaStreamAPIExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stream/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/treeMap/TreeMaps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backup_repository" beforeDir="false" afterPath="$PROJECT_DIR$/../backup_repository" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2lBT3NfsSzrM0NZBsINMkCKYizv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ArrayDeques.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Class.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Collection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Generics.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaOptional.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaPECS.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lambdas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Laptop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Optional_main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Print_1_10.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeMaps.executor&quot;: &quot;Run&quot;,
+    &quot;Application.hashMap.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rabin/eclipse-workspace/Version_2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Print_1_10">
+    <configuration name="Generics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="generics.Generics" />
+      <module name="Version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaOptional" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="stream.JavaOptional" />
+      <module name="Version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Optional_main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Optional.Optional_main" />
+      <module name="Version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Optional.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Print_1_10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="recursion.Print_1_10" />
+      <module name="Version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="recursion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreeMaps" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="treeMap.TreeMaps" />
+      <module name="Version_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="treeMap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="Version_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Print_1_10" />
+        <item itemvalue="Application.Generics" />
+        <item itemvalue="Application.JavaOptional" />
+        <item itemvalue="Application.TreeMaps" />
+        <item itemvalue="Application.Optional_main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-f5d63804" />
+        <option value="jdk-17.0.9-jbr-17.0.9-f644763e9732-520cdbdb" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-2f79fb23" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e942aee0-d64a-4a06-8661-a82b35181b6f" name="Changes" comment="" />
+      <created>1724652269704</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724652269704</updated>
+      <workItem from="1724652270883" duration="63000" />
+      <workItem from="1724652476573" duration="89000" />
+      <workItem from="1725254730563" duration="13000" />
+      <workItem from="1725254762999" duration="174000" />
+      <workItem from="1725256197050" duration="222000" />
+      <workItem from="1725256431215" duration="112000" />
+      <workItem from="1725256573672" duration="83000" />
+      <workItem from="1725256665726" duration="65000" />
+      <workItem from="1725256816072" duration="1764000" />
+      <workItem from="1725259654557" duration="4408000" />
+      <workItem from="1725267637057" duration="490000" />
+      <workItem from="1725466691156" duration="2916000" />
+      <workItem from="1731894808125" duration="3057000" />
+      <workItem from="1731946580336" duration="677000" />
+      <workItem from="1731981155807" duration="9000" />
+      <workItem from="1732077331099" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Version_2$Class.ic" NAME="Class Coverage Results" MODIFIED="1725260096613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Collection.*</FILTER>
+    </SUITE>
+  </component>
+</project>
