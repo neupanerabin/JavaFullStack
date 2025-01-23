@@ -1,9 +1,11 @@
-package array_List;
+package reverse;
 
 
 /*
  * @author : rabin
  */
+
+//        Array reverse. Write a method that will take an array as an argument and reverse it.
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package array_List;
+package reverse;
 
 
 /*
@@ -19,7 +19,7 @@ public class Reverse_String {
         people.add("5");
         people.add("2");
         people.add("9");
-        people.add("4");
+        people.add("hi");
 //        people.remove(1);
 
         // reverse the string
